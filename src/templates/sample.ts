@@ -1,6 +1,6 @@
 import { Document } from "@govtechsg/decentralized-renderer-react-components";
 
-export interface CustomTemplateCertificate extends Document {
+export interface GovTechCertificateTemplate extends Document {
   name: string;
   institute: string;
   foo?: {
@@ -8,7 +8,7 @@ export interface CustomTemplateCertificate extends Document {
   };
 }
 
-export const customTemplateCertificate: CustomTemplateCertificate = {
+export const sampleCertificate: GovTechCertificateTemplate = {
   name: "John Doe",
   institute: "Institute of John Doe",
   $template: {
@@ -17,6 +17,6 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
     url: "http://localhost:3000"
   },
   foo: {
-    title: "Bar is awesome"
+    title: "Bar is awesome2"
   }
 };
