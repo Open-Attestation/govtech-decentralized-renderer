@@ -5,12 +5,14 @@ import certificateBase from "./certificate-base.png";
 export const CertificateBase: FunctionComponent = () => (
   <div
     css={css`
-      width: 100%;
-      height: 100%;
-      position: absolute;
       background-image: url(${certificateBase});
       background-repeat: no-repeat;
+      min-height: 100%;
+      min-width: 100%;
       z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
     `}
   />
 );
