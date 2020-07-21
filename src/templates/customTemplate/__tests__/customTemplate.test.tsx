@@ -1,21 +1,19 @@
 import { CustomTemplate } from "../customTemplate";
-import { customTemplateCertificate } from "../../sample";
+import { sampleCertificate } from "../../sample";
 import { render } from "@testing-library/react";
 import React from "react";
 
 describe("customTemplate", () => {
-  it("should render with title provided by the document", () => {
-    const { queryByText } = render(
-      <CustomTemplate document={customTemplateCertificate} handleObfuscation={() => void 0} />
-    );
+  it("should render with recipient name provided by the document", () => {
+    const { queryByText } = render(<CustomTemplate document={sampleCertificate} handleObfuscation={() => void 0} />);
     // eslint-disable-next-line jest/no-truthy-falsy
-    expect(queryByText("Bar is awesome")).toBeTruthy();
+    expect(queryByText("John Doe")).toBeTruthy();
   });
-  it("should render with default title", () => {
+  it("should render with programme name provided by the document", () => {
     const { queryByText } = render(
-      <CustomTemplate document={{ ...customTemplateCertificate, foo: undefined }} handleObfuscation={() => void 0} />
+      <CustomTemplate document={{ ...sampleCertificate }} handleObfuscation={() => void 0} />
     );
     // eslint-disable-next-line jest/no-truthy-falsy
-    expect(queryByText("Default title")).toBeTruthy();
+    expect(queryByText("GovTech Internship Programme")).toBeTruthy();
   });
 });
