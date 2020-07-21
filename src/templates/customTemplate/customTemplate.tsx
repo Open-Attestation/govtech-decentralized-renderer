@@ -7,79 +7,92 @@ import certificateBase from "../../core/certificate-base.png";
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   text-align: center;
-  width: 1024px;
-  background-image: url(${certificateBase});
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100%;
-  // min-width: 100%;
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color: #525254;
+  color: #4e4e50;
 `;
 
-const name = css`
-  font-size: 38px;
-  font-style: italic;
+const background = css`
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+`;
+
+const textRegion = css`
+  left: 120px;
   top: 340px;
-  left: 90px;
   position: relative;
-  // make it anchor at specific position
+  // Can this scale by zoom?
+`;
+
+const documentName = css`
+  font-size: 58px;
+  position: relative;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #b31e8e;
+  font-weight: bold;
+`;
+
+interface DocumentTitleProps {
+  title: string;
+}
+
+const DocumentTitle: FunctionComponent<DocumentTitleProps> = ({ title }) => {
+  // From https://data.grammarbook.com/blog/capitalization/capitalizing-composition-titles-part-ii/
+  return <div css={documentName}>{title}</div>;
+};
+
+const recipientName = css`
+  font-size: 42px;
+  font-style: italic;
   margin-bottom: 15px;
 `;
 
 const programmeName = css`
-  font-size: 20px;
-  // font-style: italic;
-  top: 340px;
-  left: 90px;
-  position: relative;
+  font-size: 32px;
   margin-bottom: 15px;
 `;
 
 const dateRange = css`
-  font-size: 16px;
-  // font-style: italic;
-  top: 340px;
-  left: 90px;
-  position: relative;
-  margin-bottom: 25px;
+  font-size: 28px;
+  margin-bottom: 88px;
 `;
 
 const signature = css`
-  font-size: 16px;
-  // font-style: italic;
-  top: 340px;
-  left: 90px;
-  position: relative;
+  max-height: 150px;
 `;
 
 const signatory = css`
-  font-size: 16px;
-  // font-style: italic;
-  top: 340px;
-  left: 90px;
-  position: relative;
+  font-size: 28px;
 `;
 
 export const CustomTemplate: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & { className?: string }> = ({
   document,
   className = ""
 }) => {
+  // TODO: formatted date
   return (
     <div css={container} className={className} id="custom-template">
-      <div css={name}>{document.recipient.name}</div>
-      <div css={programmeName}>You have completed the {document.programme.name}.</div>
-      <div css={dateRange}>
-        {document.programme.startDate} to {document.programme.endDate}
+      <img css={background} src={certificateBase} />
+      <div css={textRegion}>
+        <DocumentTitle title={document.name} />
+        <div css={programmeName}>🏆 Achievement unlocked! Way to go!</div>
+
+        <div css={recipientName}>{document.recipient.name}</div>
+
+        <div css={programmeName}>You have completed the {document.programme.name}.</div>
+
+        <div css={dateRange}>
+          {document.programme.startDate} to {document.programme.endDate}
+        </div>
+
+        <img css={signature} src={document.additionalData?.certSignatories[0].signature} />
+        <div css={signatory}>
+          <strong>{document.additionalData.certSignatories[0].name}</strong>
+        </div>
+        <div css={signatory}>{document.additionalData.certSignatories[0].position}</div>
       </div>
-      <div css={signature}>
-        <img src={document.additionalData?.certSignatories[0].signature} />
-      </div>
-      <div css={signatory}>{document.additionalData.certSignatories[0].name}</div>
-      <div css={signatory}>{document.additionalData.certSignatories[0].position}</div>
     </div>
   );
 };
