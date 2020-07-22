@@ -2,7 +2,6 @@ import { Document } from "@govtechsg/decentralized-renderer-react-components";
 
 export interface GovTechCertificateTemplate extends Document {
   name: string;
-  institute: string;
   recipient: {
     name: string;
     email?: string;
@@ -25,7 +24,6 @@ export interface GovTechCertificateTemplate extends Document {
 
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
-  institute: "Institute of John Doe",
   recipient: {
     name: "John Doe"
   },
