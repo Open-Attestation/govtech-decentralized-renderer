@@ -11,18 +11,18 @@ const container = css`
 `;
 
 const background = css`
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   z-index: -1;
+  display: block;
+  width: auto;
+  height: auto;
 `;
 
 const textRegion = css`
   left: 120px;
   top: 340px;
   position: relative;
-  // Can this scale by zoom?
 `;
 
 const documentName = css`
@@ -84,6 +84,37 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
   className?: string;
 }> = ({ document, className = "" }) => {
   // TODO: formatted date
+  console.log(`
+                          ,******.                                              
+                      ***************,                                          
+                 .************************                                      
+             ,**********,          ,**********.                                 
+          **********.                  ,*********,                              
+         .******,                          ******* ####.                        
+         ,*****.                         .#(,***** ########*                    
+         ,*****                      *######.***** *(##########/                
+         ,*****                  /##########.*****      ,##########(.           
+         ,*****                #########,   ./////           (#######(/         
+         ,*****               #######       ./////              (###(((         
+         ,*****.              (#####        ,/////               /(((((         
+         ,//////              (#####       ,//////               /(((((         
+          /////////,          (#####    *////////*               /(((((         
+            .///////////      (((### //////////                  /(((((         
+                 *//////////*.(((((( /////*                         (((         
+                     *///////,(((((( /,                                         
+                         ,///,(((((((,                                          
+                               ((((((((((,                  ,                   
+                                  /((((((((((*         .########*               
+                                      ,((((((((((((((#########/                 
+                                          .(((((((((((((##*                     
+                                               /((((((
+      ________                       _________                __          
+      \\_____  \\ ______   ____   ____ \\_   ___ \\  ____________/  |_  ______
+       /   |   \\\\____ \\_/ __ \\ /    \\/    \  \\/_/ __ \\_  __ \\   __\\/  ___/
+      /    |    \\  |_> >  ___/|   |  \\     \\___\\  ___/|  | \\/|  |  \\___ \\ 
+      \\_______  /   __/ \\___  >___|  /\\______  /\\___  >__|   |__| /____  >
+              \\/|__|        \\/     \\/        \\/     \\/                 \\/ 
+            Done by your fellow interns over at the 🔗 DLT team. 😃`);
   return (
     <>
       <div css={container} className={className} id="certificate-of-achievement">
