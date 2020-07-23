@@ -7,6 +7,7 @@ import certificateBase from "../../core/certificate-base.png";
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: #4e4e50;
+  min-height: 100%;
 `;
 
 const background = css`
