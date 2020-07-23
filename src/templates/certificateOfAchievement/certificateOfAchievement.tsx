@@ -7,19 +7,16 @@ import certificateBase from "../../core/certificate-base.png";
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: #4e4e50;
-  min-height: 100%;
-`;
-
-const background = css`
-  z-index: -1;
+  background-image: url(${certificateBase});
+  background-size: cover;
+  background-position: center;
   height: 100%;
-  width: 100%;
 `;
 
 const textRegion = css`
-  position: absolute;
-  top: 52.5vh;
-  left: 34vw;
+  // position: absolute;
+  // top: 52.5vh;
+  // left: 34vw;
   text-align: center;
 `;
 
@@ -85,7 +82,6 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
   return (
     <>
       <div css={container} className={className} id="certificate-of-achievement">
-        <img css={background} src={certificateBase} />
         <div css={textRegion}>
           <DocumentTitle title={document.name} />
           <div css={programmeName}>🏆 Achievement unlocked! Way to go!</div>
