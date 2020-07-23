@@ -6,25 +6,24 @@ import certificateBase from "../../core/certificate-base.png";
 
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: center;
   color: #4e4e50;
-  width: 100%;
 `;
 
 const background = css`
   z-index: -1;
-  height: auto;
+  height: 100%;
   width: 100%;
 `;
 
 const textRegion = css`
   position: absolute;
-  top: 50vh;
-  left: 31vw;
+  top: 52.5vh;
+  left: 34vw;
+  text-align: center;
 `;
 
 const documentName = css`
-  font-size: 3rem;
+  font-size: 6vh;
   position: relative;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -33,7 +32,7 @@ const documentName = css`
 `;
 
 const documentNameSmaller = css`
-  font-size: 40px;
+  font-size: 4vh;
 `;
 
 interface DocumentTitleProps {
@@ -55,27 +54,27 @@ const DocumentTitle: FunctionComponent<DocumentTitleProps> = ({ title }) => {
 };
 
 const recipientName = css`
-  font-size: 42px;
+  font-size: 6vh;
   font-style: italic;
-  margin-bottom: 15px;
+  margin-bottom: 1.5vh;
 `;
 
 const programmeName = css`
-  font-size: 32px;
-  margin-bottom: 15px;
+  font-size: 4vh;
+  margin-bottom: 1.5px;
 `;
 
 const dateRange = css`
-  font-size: 28px;
-  margin-bottom: 88px;
+  font-size: 3.5vh;
+  margin-bottom: 25vh;
 `;
 
 const signature = css`
-  max-height: 150px;
+  max-height: 20vh;
 `;
 
 const signatory = css`
-  font-size: 28px;
+  font-size: 4vh;
 `;
 
 export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & {
