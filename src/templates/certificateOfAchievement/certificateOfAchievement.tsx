@@ -8,25 +8,23 @@ const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   text-align: center;
   color: #4e4e50;
+  width: 100%;
 `;
 
 const background = css`
-  margin-left: auto;
-  margin-right: auto;
   z-index: -1;
-  display: block;
-  width: auto;
   height: auto;
+  width: 100%;
 `;
 
 const textRegion = css`
-  left: 120px;
-  top: 340px;
-  position: relative;
+  position: absolute;
+  top: 50vh;
+  left: 31vw;
 `;
 
 const documentName = css`
-  font-size: 58px;
+  font-size: 3rem;
   position: relative;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -84,37 +82,6 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
   className?: string;
 }> = ({ document, className = "" }) => {
   // TODO: formatted date
-  console.log(`
-                          ,******.                                              
-                      ***************,                                          
-                 .************************                                      
-             ,**********,          ,**********.                                 
-          **********.                  ,*********,                              
-         .******,                          ******* ####.                        
-         ,*****.                         .#(,***** ########*                    
-         ,*****                      *######.***** *(##########/                
-         ,*****                  /##########.*****      ,##########(.           
-         ,*****                #########,   ./////           (#######(/         
-         ,*****               #######       ./////              (###(((         
-         ,*****.              (#####        ,/////               /(((((         
-         ,//////              (#####       ,//////               /(((((         
-          /////////,          (#####    *////////*               /(((((         
-            .///////////      (((### //////////                  /(((((         
-                 *//////////*.(((((( /////*                         (((         
-                     *///////,(((((( /,                                         
-                         ,///,(((((((,                                          
-                               ((((((((((,                  ,                   
-                                  /((((((((((*         .########*               
-                                      ,((((((((((((((#########/                 
-                                          .(((((((((((((##*                     
-                                               /((((((
-      ________                       _________                __          
-      \\_____  \\ ______   ____   ____ \\_   ___ \\  ____________/  |_  ______
-       /   |   \\\\____ \\_/ __ \\ /    \\/    \  \\/_/ __ \\_  __ \\   __\\/  ___/
-      /    |    \\  |_> >  ___/|   |  \\     \\___\\  ___/|  | \\/|  |  \\___ \\ 
-      \\_______  /   __/ \\___  >___|  /\\______  /\\___  >__|   |__| /____  >
-              \\/|__|        \\/     \\/        \\/     \\/                 \\/ 
-            Done by your fellow interns over at the 🔗 DLT team. 😃`);
   return (
     <>
       <div css={container} className={className} id="certificate-of-achievement">
