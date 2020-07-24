@@ -7,21 +7,34 @@ import certificateBase from "../../core/certificate-base.png";
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: #4e4e50;
-  background-image: url(${certificateBase});
-  background-size: cover;
-  background-position: center;
-  height: 100%;
+  text-align: center;
+  height: 954px;
+  width: 1350px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(31, 45, 61, 0.05);
+  transform-origin: 0 0 0;
+  transform: scale(1.40881) translate(0px, 0px);
+`;
+
+const imageRegion = css`
+  // visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 954px;
+  width: 1350px;
+  z-index: -1;
 `;
 
 const textRegion = css`
-  // position: absolute;
-  // top: 52.5vh;
-  // left: 34vw;
+  position: relative;
+  top: 275px;
+  left: 95px;
   text-align: center;
 `;
 
 const documentName = css`
-  font-size: 6vh;
+  font-size: 48px;
   position: relative;
   text-transform: uppercase;
   font-variant: small-caps;
@@ -30,7 +43,7 @@ const documentName = css`
 `;
 
 const documentNameSmaller = css`
-  font-size: 4vh;
+  font-size: 32px;
 `;
 
 interface DocumentTitleProps {
@@ -52,27 +65,27 @@ const DocumentTitle: FunctionComponent<DocumentTitleProps> = ({ title }) => {
 };
 
 const recipientName = css`
-  font-size: 6vh;
+  font-size: 40px;
   font-style: italic;
-  margin-bottom: 1.5vh;
+  margin-bottom: 16px;
 `;
 
 const programmeName = css`
-  font-size: 4vh;
-  margin-bottom: 1.5px;
+  font-size: 24px;
+  margin-bottom: 16px;
 `;
 
 const dateRange = css`
-  font-size: 3.5vh;
-  margin-bottom: 25vh;
+  font-size: 20px;
+  margin-bottom: 64px;
 `;
 
 const signature = css`
-  max-height: 20vh;
+  max-height: 120px;
 `;
 
 const signatory = css`
-  font-size: 4vh;
+  font-size: 20px;
 `;
 
 export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & {
@@ -100,6 +113,7 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
           </div>
           <div css={signatory}>{document.additionalData.certSignatories[0].position}</div>
         </div>
+        <img css={imageRegion} src={certificateBase} />
       </div>
     </>
   );
