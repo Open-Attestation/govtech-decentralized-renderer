@@ -3,7 +3,6 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { GovTechCertificateTemplate } from "../sample";
 import certificateBase from "../../core/certificate-base.png";
-import moment from "moment";
 
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
