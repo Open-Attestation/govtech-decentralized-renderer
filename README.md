@@ -1,6 +1,6 @@
 # decentralized-renderer-react-template
 
-[![CircleCI](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template.svg?style=svg)](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template) [![Netlify Status](https://api.netlify.com/api/v1/badges/5f1307a0-69cc-47a7-b0ea-04f3cb27f58a/deploy-status)](https://app.netlify.com/sites/govtech-decentralized-renderer-dev/deploys)
+[![CircleCI](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template.svg?style=svg)](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template) [![Netlify Status](https://api.netlify.com/api/v1/badges/b91da04b-a80e-4c12-ad1c-b6571e35c1ef/deploy-status)](https://app.netlify.com/sites/govtech-decentralized-renderer/deploys)
 
 
 React boilerplate to write decentralize renderer.
