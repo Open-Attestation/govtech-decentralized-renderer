@@ -2,8 +2,8 @@ import { CertificateOfAchievement } from "./certificateOfAchievement";
 
 export const templates = [
   {
-    id: "custom",
-    label: "Custom",
+    id: "CERTIFICATE_OF_ACHIEVEMENT",
+    label: "Certificate",
     template: CertificateOfAchievement
   }
 ];

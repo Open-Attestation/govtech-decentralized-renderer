@@ -3,26 +3,22 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { GovTechCertificateTemplate } from "../sample";
 import certificateBase from "../../core/certificate-base.png";
+import moment from "moment";
 
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: #4e4e50;
   text-align: center;
-  height: 954px;
   width: 1350px;
   position: relative;
   box-shadow: 0 2px 8px rgba(31, 45, 61, 0.05);
-  transform-origin: 0 0 0;
-  transform: scale(1.40881) translate(0px, 0px);
   margin: 0 auto;
 `;
 
 const imageRegion = css`
-  // visibility: hidden;
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 954px;
   width: 1350px;
   z-index: -1;
 `;
@@ -54,15 +50,17 @@ interface DocumentTitleProps {
 const DocumentTitle: FunctionComponent<DocumentTitleProps> = ({ title }) => {
   // From https://data.grammarbook.com/blog/capitalization/capitalizing-composition-titles-part-ii/
   const list = ["of"];
-  const display: JSX.Element[] = [];
-  title.split(" ").forEach(function(word) {
-    if (list.includes(word)) {
-      display.push(<span css={documentNameSmaller}>{word} </span>);
-    } else {
-      display.push(<>{word} </>);
-    }
-  });
-  return <div css={documentName}>{display}</div>;
+  return (
+    <div css={documentName}>
+      {title.split(" ").map(function(word) {
+        if (list.includes(word)) {
+          return <span css={documentNameSmaller}>{word} </span>;
+        } else {
+          return <>{word} </>;
+        }
+      })}
+    </div>
+  );
 };
 
 const recipientName = css`
@@ -92,7 +90,6 @@ const signatory = css`
 export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & {
   className?: string;
 }> = ({ document, className = "" }) => {
-  // TODO: formatted date
   return (
     <>
       <div css={container} className={className} id="certificate-of-achievement">
@@ -108,11 +105,11 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
             {document.programme.startDate} to {document.programme.endDate}
           </div>
 
-          <img css={signature} src={document.additionalData?.certSignatories[0].signature} />
+          <img css={signature} src={document.signatory.signature} />
           <div css={signatory}>
-            <strong>{document.additionalData.certSignatories[0].name}</strong>
+            <strong>{document.signatory.name}</strong>
           </div>
-          <div css={signatory}>{document.additionalData.certSignatories[0].position}</div>
+          <div css={signatory}>{document.signatory.position}</div>
         </div>
         <img css={imageRegion} src={certificateBase} />
       </div>
