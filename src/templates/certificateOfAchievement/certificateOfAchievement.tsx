@@ -14,6 +14,7 @@ const container = css`
   box-shadow: 0 2px 8px rgba(31, 45, 61, 0.05);
   transform-origin: 0 0 0;
   transform: scale(1.40881) translate(0px, 0px);
+  margin: 0 auto;
 `;
 
 const imageRegion = css`
