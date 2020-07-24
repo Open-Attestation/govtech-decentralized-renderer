@@ -10,7 +10,6 @@ const container = css`
   text-align: center;
   width: 1350px;
   position: relative;
-  box-shadow: 0 2px 8px rgba(31, 45, 61, 0.05);
   margin: 0 auto;
 `;
 
