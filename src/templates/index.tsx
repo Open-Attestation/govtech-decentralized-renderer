@@ -2,5 +2,5 @@ import { TemplateRegistry } from "@govtechsg/decentralized-renderer-react-compon
 import { templates } from "./certificateOfAchievement";
 
 export const registry: TemplateRegistry<any> = {
-  custom: templates
+  CERTIFICATE_OF_ACHIEVEMENT: templates
 };
