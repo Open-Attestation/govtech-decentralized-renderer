@@ -3,7 +3,8 @@ import { Document } from "@govtechsg/decentralized-renderer-react-components";
 export interface GovTechCertificateTemplate extends Document {
   name: string;
   recipient: {
-    name: string;
+    firstName: string;
+    lastName: string;
     email?: string;
     nric?: string;
   };
@@ -23,12 +24,13 @@ export interface GovTechCertificateTemplate extends Document {
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
   recipient: {
-    name: "John Doe"
+    firstName: "Jia Jian",
+    lastName: "Goi"
   },
   programme: {
     name: "GovTech Internship Programme",
-    startDate: "1 Aug 2019",
-    endDate: "29 Nov 2019"
+    startDate: "4 May 2020",
+    endDate: "7 Oct 2020"
   },
   signatory: {
     name: "Evangeline Chua",

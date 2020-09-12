@@ -96,7 +96,9 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
           <DocumentTitle title={document.name} />
           <div css={programmeName}>Achievement unlocked! Way to go!</div>
 
-          <div css={recipientName}>{document.recipient.name}</div>
+          <div css={recipientName}>
+            {document.recipient.firstName} {document.recipient.firstName}
+          </div>
 
           <div css={programmeName}>You have completed the {document.programme.name}.</div>
 
