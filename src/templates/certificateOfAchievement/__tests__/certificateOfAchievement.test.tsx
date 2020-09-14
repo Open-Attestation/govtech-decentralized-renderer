@@ -4,6 +4,13 @@ import { render } from "@testing-library/react";
 import React from "react";
 
 describe("customTemplate", () => {
+  it("should render the certificate provided by the document", () => {
+    const { queryByText } = render(
+      <CertificateOfAchievement document={sampleCertificate} handleObfuscation={() => void 0} />
+    );
+    // eslint-disable-next-line jest/no-truthy-falsy
+    expect(queryByText("Certificate of Achievement")).toBeTruthy();
+  });
   it("should render with recipient name provided by the document", () => {
     const { queryByText } = render(
       <CertificateOfAchievement document={sampleCertificate} handleObfuscation={() => void 0} />
@@ -17,5 +24,20 @@ describe("customTemplate", () => {
     );
     // eslint-disable-next-line jest/no-truthy-falsy
     expect(queryByText("GovTech Internship Programme")).toBeTruthy();
+  });
+  it("should render with the start date provided by the document", () => {
+    const { queryByText } = render(
+      <CertificateOfAchievement document={{ ...sampleCertificate }} handleObfuscation={() => void 0} />
+    );
+    // eslint-disable-next-line jest/no-truthy-falsy
+    expect(queryByText("1 Aug 2019")).toBeTruthy();
+  });
+  it("should render with the signatory details provided by the document", () => {
+    const { queryByText } = render(
+      <CertificateOfAchievement document={{ ...sampleCertificate }} handleObfuscation={() => void 0} />
+    );
+    // eslint-disable-next-line jest/no-truthy-falsy
+    expect(queryByText("Evangeline Chua")).toBeTruthy();
+    expect(queryByText("Chief People Officer")).toBeTruthy();
   });
 });

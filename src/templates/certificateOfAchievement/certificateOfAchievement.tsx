@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
+import { format } from "date-fns";
 import { GovTechCertificateTemplate } from "../sample";
 import certificateBase from "../../core/certificate-base.png";
 
@@ -93,14 +94,17 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
       <div css={container} className={className} id="certificate-of-achievement">
         <div css={textRegion}>
           <DocumentTitle title={document.name} />
-          <div css={programmeName}>🏆 Achievement unlocked! Way to go!</div>
+          <div css={programmeName}>Achievement unlocked! Way to go!</div>
 
-          <div css={recipientName}>{document.recipient.name}</div>
+          <div css={recipientName}>
+            {document.recipient.firstName} {document.recipient.firstName}
+          </div>
 
           <div css={programmeName}>You have completed the {document.programme.name}.</div>
 
           <div css={dateRange}>
-            {document.programme.startDate} to {document.programme.endDate}
+            {format(new Date(document.programme.startDate), "d MMM yyyy")} to{" "}
+            {format(new Date(document.programme.endDate), "d MMM yyyy")}
           </div>
 
           <img css={signature} src={document.signatory.signature} />
