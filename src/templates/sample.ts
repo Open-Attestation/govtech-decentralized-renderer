@@ -29,8 +29,8 @@ export const sampleCertificate: GovTechCertificateTemplate = {
   },
   programme: {
     name: "GovTech Internship Programme",
-    startDate: "4 May 2020",
-    endDate: "7 Oct 2020"
+    startDate: "4-May-20",
+    endDate: "7-Oct-20"
   },
   signatory: {
     name: "Evangeline Chua",
