@@ -12,6 +12,11 @@ const container = css`
   width: 1350px;
   position: relative;
   margin: 0 auto;
+  @media print {
+    @page {
+      size: landscape;
+    }
+  }
 `;
 
 const imageRegion = css`
