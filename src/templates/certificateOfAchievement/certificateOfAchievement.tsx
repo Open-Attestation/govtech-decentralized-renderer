@@ -34,7 +34,7 @@ const textRegion = css`
   text-align: center;
 `;
 
-const documentName = css`
+const documentTitle = css`
   font-size: 48px;
   position: relative;
   text-transform: uppercase;
@@ -43,7 +43,7 @@ const documentName = css`
   font-weight: bold;
 `;
 
-const documentNameSmaller = css`
+const documentTitleSmaller = css`
   font-size: 32px;
 `;
 
@@ -55,12 +55,16 @@ const DocumentTitle: FunctionComponent<DocumentTitleProps> = ({ title }) => {
   // From https://data.grammarbook.com/blog/capitalization/capitalizing-composition-titles-part-ii/
   const list = ["of"];
   return (
-    <div css={documentName}>
+    <div id="document-title" css={documentTitle}>
       {title.split(" ").map(function(word) {
         if (list.includes(word)) {
-          return <span css={documentNameSmaller}>{word} </span>;
+          return (
+            <span key={word} css={documentTitleSmaller}>
+              {word}{" "}
+            </span>
+          );
         } else {
-          return <>{word} </>;
+          return <span key={word}>{word} </span>;
         }
       })}
     </div>
@@ -99,24 +103,30 @@ export const CertificateOfAchievement: FunctionComponent<TemplateProps<GovTechCe
       <div css={container} className={className} id="certificate-of-achievement">
         <div css={textRegion}>
           <DocumentTitle title={document.name} />
-          <div css={programmeName}>Achievement unlocked! Way to go!</div>
+          <div id="programme-name" css={programmeName}>
+            Achievement unlocked! Way to go!
+          </div>
 
-          <div css={recipientName}>
+          <div id="recipient-name" css={recipientName}>
             {document.recipient.firstName} {document.recipient.lastName}
           </div>
 
-          <div css={programmeName}>You have completed the {document.programme.name}.</div>
+          <div id="programme-name" css={programmeName}>
+            You have completed the {document.programme.name}.
+          </div>
 
-          <div css={dateRange}>
+          <div id="date-range" css={dateRange}>
             {format(new Date(document.programme.startDate), "d MMM yyyy")} to{" "}
             {format(new Date(document.programme.endDate), "d MMM yyyy")}
           </div>
 
           <img css={signature} src={document.signatory.signature} />
           <div css={signatory}>
-            <strong>{document.signatory.name}</strong>
+            <strong id="signatory-name">{document.signatory.name}</strong>
           </div>
-          <div css={signatory}>{document.signatory.position}</div>
+          <div id="signatory-position" css={signatory}>
+            {document.signatory.position}
+          </div>
         </div>
         <img css={imageRegion} src={certificateBase} />
       </div>
