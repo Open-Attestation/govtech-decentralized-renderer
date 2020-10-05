@@ -10,6 +10,8 @@ const CustomTemplate = Selector("#custom-template");
 test("Custom certificate is rendered correctly", async test => {
   await test.eval(
     () => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore can't find a way to have this working on test cafe
       window.openAttestation({
         type: "RENDER_DOCUMENT",
         payload: {
