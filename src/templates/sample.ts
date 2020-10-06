@@ -24,8 +24,8 @@ export interface GovTechCertificateTemplate extends Document {
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
   recipient: {
-    firstName: "Jia Jian",
-    lastName: "Goi"
+    firstName: "Barry",
+    lastName: "Lim"
   },
   programme: {
     name: "GovTech Internship Programme",
