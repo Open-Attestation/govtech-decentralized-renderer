@@ -17,7 +17,7 @@ describe("customTemplate", () => {
     const { getByText } = render(
       <CertificateOfAchievement document={sampleCertificate} handleObfuscation={() => void 0} />
     );
-    expect(getByText("Jia Jian Goi")).toBeInTheDocument();
+    expect(getByText("Steven Koh")).toBeInTheDocument();
   });
   it("should render with programme name provided by the document", () => {
     const { getByText } = render(

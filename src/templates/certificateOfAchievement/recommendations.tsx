@@ -23,7 +23,7 @@ export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificate
             return (
               <div key={item.recommendation}>
                 <div>{item.recommendation}</div>
-                <div>{item.name}</div>
+                <div>&mdash; {item.name}</div>
               </div>
             );
           })}

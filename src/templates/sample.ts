@@ -28,8 +28,8 @@ export interface GovTechCertificateTemplate extends Document {
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
   recipient: {
-    firstName: "Jia Jian",
-    lastName: "Goi"
+    firstName: "Steven",
+    lastName: "Koh"
   },
   programme: {
     name: "GovTech Internship Programme",
@@ -38,12 +38,14 @@ export const sampleCertificate: GovTechCertificateTemplate = {
   },
   recommendations: [
     {
-      recommendation: "Lorem ipsum dolor",
-      name: "Kok Ping Soon"
+      recommendation:
+        "Steven has managed to build a team culture that is open, autonomous, innovative and progressive within a traditionally bureaucratic environment. It allows motivated and independent people to grow and do their best work. I definitely feel I've experienced the most professional and personal growth in the time I worked with him.",
+      name: "LinkedIn User 1"
     },
     {
-      recommendation: "Lorem ipsum dolor 2",
-      name: "supervisor"
+      recommendation:
+        "Steven is an empowering leader who is also extremely passionate about engineering excellence and has the know-how to mentor and drive engineers. In our time together at GovTech, he has enabled a period of high personal and professional growth for me through consistent 1-1s with him and having the opportunity to observe him at work with those of his level and even above him. Never one to back down from a fight that needs to happen, he also manages to demonstrate sincere kindness to those around him: ingredients of a powerful leader. His passion for engineering, empowering methods of managing people, and individual engineering competency has served and will continue serve as a role model for me in my career and I’m grateful for the opportunity to have been working with him.",
+      name: "LinkedIn User 2"
     }
   ],
   signatory: {
