@@ -2,17 +2,16 @@ import { Selector } from "testcafe";
 import { sampleCertificate } from "../templates/sample";
 import percySnapshot from "@percy/testcafe";
 
-// assign certificate to a variable otherwise there is an error ... ReferenceError: sample_1 is not defined
-const document = { ...sampleCertificate, $template: { ...sampleCertificate, name: "red" } };
-fixture("Custom Red Certificate Template").page`http://localhost:3000`;
+const document = { ...sampleCertificate };
+fixture("GovTech Internship Certificate of Achievement").page`http://localhost:3000`;
 
-const CustomTemplate = Selector("#custom-template");
+const CustomTemplate = Selector("#certificate-of-achievement");
 
-test("Custom certificate is rendered correctly", async test => {
+test("Certificate of Achievement is rendered correctly", async test => {
   await test.eval(
     () => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore can't find a way to have thos working on test cafe
+      // @ts-ignore can't find a way to have this working on test cafe
       window.openAttestation({
         type: "RENDER_DOCUMENT",
         payload: {
@@ -26,9 +25,14 @@ test("Custom certificate is rendered correctly", async test => {
       }
     }
   );
-  // test the title is displayed
   await test.expect(CustomTemplate.visible).ok();
-  await test.expect(CustomTemplate.textContent).contains("Bar is awesome");
+  await test.expect(CustomTemplate.textContent).contains("Certificate of Achievement");
+  await test.expect(CustomTemplate.textContent).contains("Achievement unlocked! Way to go!");
+  await test.expect(CustomTemplate.textContent).contains("Jia Jian Goi");
+  await test.expect(CustomTemplate.textContent).contains("You have completed the GovTech Internship Programme.");
+  await test.expect(CustomTemplate.textContent).contains("4 May 2020 to 7 Oct 2020");
+  await test.expect(CustomTemplate.textContent).contains("Evangeline Chua");
+  await test.expect(CustomTemplate.textContent).contains("Chief People Officer");
 
   // take a snapshot
   await percySnapshot(test, "Rendered custom template");
