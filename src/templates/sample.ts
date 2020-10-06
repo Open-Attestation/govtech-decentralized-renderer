@@ -13,6 +13,10 @@ export interface GovTechCertificateTemplate extends Document {
     startDate: string;
     endDate: string;
   };
+  recommendations?: {
+    recommendation?: string;
+    name?: string;
+  }[];
   signatory: {
     name: string;
     position: string;
@@ -24,14 +28,24 @@ export interface GovTechCertificateTemplate extends Document {
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
   recipient: {
-    firstName: "Barry",
-    lastName: "Lim"
+    firstName: "Jia Jian",
+    lastName: "Goi"
   },
   programme: {
     name: "GovTech Internship Programme",
     startDate: "4-May-20",
     endDate: "7-Oct-20"
   },
+  recommendations: [
+    {
+      recommendation: "Lorem ipsum dolor",
+      name: "Kok Ping Soon"
+    },
+    {
+      recommendation: "Lorem ipsum dolor 2",
+      name: "supervisor"
+    }
+  ],
   signatory: {
     name: "Evangeline Chua",
     position: "Chief People Officer",
