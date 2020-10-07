@@ -73,7 +73,7 @@ export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificate
         <div css={recommendationsSectionHeading}>
           Here&rsquo;s what people have to say about {document.recipient.firstName}:
         </div>
-        {document.recommendations?.map(function(item, i) {
+        {document.recommendations?.map(item => {
           if (item.recommendation) {
             return (
               <blockquote css={recommendationsListItem} key={item.recommendation}>
