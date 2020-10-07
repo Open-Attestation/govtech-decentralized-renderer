@@ -17,19 +17,48 @@ const recommendationsSectionHeading = css`
 `;
 
 const recommendationsListItem = css`
-  margin-bottom: 24px;
+  position: relative;
+  background-color: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 20px 0;
+  padding: 20px 15px;
+
+  cite {
+    color: #999;
+    font-size: 18px;
+  }
 `;
 
 const recommendationsContent = css`
-  display: flex;
-`;
+  position: relative;
+  padding: 20px 40px;
 
-const quotationMark = css`
-  font-size: 3rem;
-  line-height: 1.25;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.9);
-  margin-right: 12px;
+  &::before,
+  &::after {
+    position: absolute;
+    color: #ccc;
+    font-size: 60px;
+    line-height: 1;
+  }
+
+  &::before {
+    content: open-quote;
+    top: 0;
+    left: 10px;
+  }
+
+  &::after {
+    content: close-quote;
+    bottom: 0;
+    right: 10px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #555;
+  }
 `;
 
 export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & {
@@ -44,25 +73,18 @@ export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificate
         <div css={recommendationsSectionHeading}>
           Here&rsquo;s what people have to say about {document.recipient.firstName}:
         </div>
-        <div>
-          {document.recommendations?.map(function(item, i) {
-            if (item.recommendation) {
-              // show divider if it's not the last item
-              const divider = i + 1 !== numberOfRecommendations ? <hr /> : "";
-
-              return (
-                <div css={recommendationsListItem} key={item.recommendation}>
-                  <div css={recommendationsContent}>
-                    <div css={quotationMark}>&ldquo;</div>
-                    <div>{entities.decode(item.recommendation)}</div>
-                  </div>
-                  <div>&mdash; {item.name}</div>
-                  {divider}
+        {document.recommendations?.map(function(item, i) {
+          if (item.recommendation) {
+            return (
+              <blockquote css={recommendationsListItem} key={item.recommendation}>
+                <div css={recommendationsContent}>
+                  <p>{entities.decode(item.recommendation)}</p>
                 </div>
-              );
-            }
-          })}
-        </div>
+                <cite>&mdash; {item.name}</cite>
+              </blockquote>
+            );
+          }
+        })}
       </>
     ) : (
       <div>It doesn&rsquo;t seem like there&rsquo;s a recommendation for {document.recipient.firstName} yet. 🙁</div>
