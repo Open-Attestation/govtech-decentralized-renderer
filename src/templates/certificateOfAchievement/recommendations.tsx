@@ -3,10 +3,10 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { GovTechCertificateTemplate } from "../sample";
 import { AllHtmlEntities } from "html-entities";
+import { containerCustom } from "./certificateOfAchievement";
 
 const container = css`
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  position: relative;
+  ${containerCustom()};
 `;
 
 const recommendationsSectionHeading = css`

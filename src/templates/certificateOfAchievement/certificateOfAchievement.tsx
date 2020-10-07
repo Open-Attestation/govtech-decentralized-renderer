@@ -5,13 +5,24 @@ import { format } from "date-fns";
 import { GovTechCertificateTemplate } from "../sample";
 import certificateBase from "../../core/certificate-base.png";
 
+// once opencerts adhere to bootstrap's container class, max-width will need to change to align
+export const containerCustom = (): string => {
+  return `
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    position: relative;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  `;
+};
+
+// setting width explicitly, due to how bg image's composition is prepped
 const container = css`
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  ${containerCustom()};
   color: #4e4e50;
   text-align: center;
-  width: 1350px;
-  position: relative;
-  margin: 0 auto;
+  width: 1280px;
+
   @media print {
     @page {
       size: landscape;
@@ -19,19 +30,20 @@ const container = css`
   }
 `;
 
+// setting width explicitly, due to how bg image's composition is prepped
 const imageRegion = css`
   position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1350px;
+  top: 0;
+  left: 0;
   z-index: -1;
+  width: 1280px;
 `;
 
 const textRegion = css`
-  position: relative;
-  top: 275px;
-  left: 95px;
+  display: inline-block;
   text-align: center;
+  margin-top: 270px;
+  margin-left: 190px;
 `;
 
 const documentTitle = css`
