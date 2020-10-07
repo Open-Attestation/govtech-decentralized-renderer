@@ -19,19 +19,19 @@ const recommendationsSectionHeading = css`
 const recommendationsListItem = css`
   position: relative;
   background-color: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 20px 0;
+  border-left: 8px solid #ccc;
+  margin: 30px 0;
   padding: 20px 15px;
 
   cite {
-    color: #999;
+    color: #888;
     font-size: 18px;
   }
 `;
 
 const recommendationsContent = css`
   position: relative;
-  padding: 20px 40px;
+  padding: 20px 30px;
 
   &::before,
   &::after {
@@ -44,20 +44,21 @@ const recommendationsContent = css`
   &::before {
     content: open-quote;
     top: 0;
-    left: 10px;
+    left: 0;
   }
 
   &::after {
     content: close-quote;
     bottom: 0;
-    right: 10px;
+    right: 0;
   }
 
   p {
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 21px;
     color: #555;
+    line-height: 1.5;
   }
 `;
 
