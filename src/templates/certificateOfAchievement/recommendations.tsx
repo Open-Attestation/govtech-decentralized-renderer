@@ -2,8 +2,8 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
 import { GovTechCertificateTemplate } from "../sample";
-import { AllHtmlEntities } from "html-entities";
 import { containerCustom } from "./certificateOfAchievement";
+import { unescape } from "he";
 
 const container = css`
   ${containerCustom()};
@@ -65,7 +65,6 @@ const recommendationsContent = css`
 export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificateTemplate> & {
   className?: string;
 }> = ({ document, className = "" }) => {
-  const entities = new AllHtmlEntities();
   const numberOfRecommendations = document.recommendations?.length ?? 0;
   // show a different message when there are no recommendations
   const display =
@@ -79,7 +78,7 @@ export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificate
             return (
               <blockquote css={recommendationsListItem} key={item.recommendation}>
                 <div css={recommendationsContent}>
-                  <p>{entities.decode(item.recommendation)}</p>
+                  <p>{unescape(item.recommendation)}</p>
                 </div>
                 <cite>&mdash; {item.name}</cite>
               </blockquote>
