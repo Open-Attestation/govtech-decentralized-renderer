@@ -3,7 +3,6 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { GovTechCertificateTemplate } from "../sample";
 import { containerCustom } from "./certificateOfAchievement";
-import { unescape } from "he";
 
 const container = css`
   ${containerCustom()};
@@ -78,7 +77,7 @@ export const Recommendations: FunctionComponent<TemplateProps<GovTechCertificate
             return (
               <blockquote css={recommendationsListItem} key={item.recommendation}>
                 <div css={recommendationsContent}>
-                  <p>{unescape(item.recommendation)}</p>
+                  <p>{item.recommendation}</p>
                 </div>
                 <cite>&mdash; {item.name}</cite>
               </blockquote>
