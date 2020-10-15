@@ -13,6 +13,6 @@ export const templates: TemplateWithComponent<GovTechCertificateTemplate>[] = [
     id: "RECOMMENDATIONS",
     label: "Recommendations",
     template: Recommendations,
-    predicate: document => (document.document?.recommendations ?? []).length > 0
+    predicate: ({ document }) => (document.recommendations ?? []).length > 0
   }
 ];
