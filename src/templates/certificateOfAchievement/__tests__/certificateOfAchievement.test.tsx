@@ -1,5 +1,5 @@
 import { CertificateOfAchievement } from "../certificateOfAchievement";
-import { sampleCertificate } from "../sample";
+import { sampleCertificate } from "../fixtures/sample";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";

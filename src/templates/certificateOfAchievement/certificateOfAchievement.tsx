@@ -2,19 +2,9 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
 import { format } from "date-fns";
-import { GovTechCertificateTemplate } from "./sample";
 import certificateBase from "../../core/certificate-base.png";
-
-// once opencerts adhere to bootstrap's container class, max-width will need to change to align
-export const containerCustom = (): string => {
-  return `
-    font-family: "Source Sans Pro", sans-serif;
-    position: relative;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-  `;
-};
+import { containerCustom } from "./utils/styles";
+import { GovTechCertificateTemplate } from "./types";
 
 // setting width explicitly, due to how bg image's composition is prepped
 const container = css`

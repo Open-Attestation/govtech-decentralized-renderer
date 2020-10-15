@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
-import { GovTechCertificateTemplate } from "./sample";
-import { containerCustom } from "./certificateOfAchievement";
+import { containerCustom } from "./utils/styles";
+import { GovTechCertificateTemplate } from "./types";
 
 const container = css`
   ${containerCustom()};

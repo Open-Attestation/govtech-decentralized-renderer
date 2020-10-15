@@ -1,7 +1,7 @@
 import { TemplateWithComponent } from "@govtechsg/decentralized-renderer-react-components";
 import { CertificateOfAchievement } from "./certificateOfAchievement";
 import { Recommendations } from "./recommendations";
-import { GovTechCertificateTemplate } from "./sample";
+import { GovTechCertificateTemplate } from "./types";
 
 export const templates: TemplateWithComponent<GovTechCertificateTemplate>[] = [
   {
