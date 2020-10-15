@@ -48,7 +48,7 @@ const programmeName = css`
 
 const quote = css`
   font-size: 30px;
-  margin-bottom: 45px;
+  margin-bottom: 65px;
   color: #f47921;
 `;
 
@@ -61,8 +61,8 @@ const dateRange = css`
 `;
 
 const signature = css`
-  max-height: 120px;
-  margin-right: 520px;
+  max-height: 90px;
+  margin-right: 530px;
 `;
 
 const signatory = css`
@@ -87,7 +87,7 @@ export const GeekOut2020: FunctionComponent<TemplateProps<GeekOut2020Certificate
           </div>
 
           <div id="recipient-name" css={recipientName}>
-            {document.recipient.firstName} {document.recipient.lastName}
+            {document.recipient.name}
           </div>
 
           <div id="programme-name" css={programmeName}>
