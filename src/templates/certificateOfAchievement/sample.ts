@@ -1,8 +1,9 @@
-import { Document } from "@govtechsg/decentralized-renderer-react-components";
+import { v2 } from "@govtechsg/decentralized-renderer-react-components";
 
-export interface GovTechCertificateTemplate extends Document {
+export interface GovTechCertificateTemplate extends v2.OpenAttestationDocument {
   name: string;
   recipient: {
+    name?: string;
     firstName: string;
     lastName: string;
     email?: string;
@@ -36,6 +37,11 @@ export const sampleCertificate: GovTechCertificateTemplate = {
     startDate: "4-May-20",
     endDate: "7-Oct-20"
   },
+  issuers: [
+    {
+      name: "GovTech Singapore"
+    }
+  ],
   recommendations: [
     {
       recommendation:
@@ -57,7 +63,7 @@ export const sampleCertificate: GovTechCertificateTemplate = {
   },
   $template: {
     name: "CERTIFICATE_OF_ACHIEVEMENT",
-    type: "EMBEDDED_RENDERER",
+    type: v2.TemplateType.EmbeddedRenderer,
     url: "http://localhost:3000"
   }
 };

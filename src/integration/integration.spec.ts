@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { sampleCertificate } from "../templates/sample";
+import { sampleCertificate } from "../templates/certificateOfAchievement/sample";
 import percySnapshot from "@percy/testcafe";
 
 const document = { ...sampleCertificate };

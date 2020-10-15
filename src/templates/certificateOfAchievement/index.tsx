@@ -1,7 +1,9 @@
+import { TemplateWithComponent } from "@govtechsg/decentralized-renderer-react-components";
 import { CertificateOfAchievement } from "./certificateOfAchievement";
 import { Recommendations } from "./recommendations";
+import { GovTechCertificateTemplate } from "./sample";
 
-export const templates = [
+export const templates: TemplateWithComponent<GovTechCertificateTemplate>[] = [
   {
     id: "CERTIFICATE_OF_ACHIEVEMENT",
     label: "Certificate",
@@ -10,6 +12,7 @@ export const templates = [
   {
     id: "RECOMMENDATIONS",
     label: "Recommendations",
-    template: Recommendations
+    template: Recommendations,
+    predicate: document => (document.document?.recommendations ?? []).length > 0
   }
 ];

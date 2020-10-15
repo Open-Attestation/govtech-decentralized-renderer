@@ -7,7 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "@govtechsg/decentralized-renderer-react-components": "^2.3.3",
+    "@govtechsg/decentralized-renderer-react-components": "git+https://github.com/Open-Attestation/decentralized-renderer-react-components.git#feat/renderer-templates",
     "@hot-loader/react-dom": "^16.13.0",
     "date-fns": "^2.16.1",
     "debug": "4.1.1",
