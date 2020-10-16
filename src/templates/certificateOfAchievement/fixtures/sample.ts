@@ -1,37 +1,34 @@
-import { Document } from "@govtechsg/decentralized-renderer-react-components";
-
-export interface GovTechCertificateTemplate extends Document {
-  name: string;
-  recipient: {
-    firstName: string;
-    lastName: string;
-    email?: string;
-    nric?: string;
-  };
-  programme: {
-    name: string;
-    startDate: string;
-    endDate: string;
-  };
-  signatory: {
-    name: string;
-    position: string;
-    organisation: string;
-    signature: string;
-  };
-}
+import { v2 } from "@govtechsg/decentralized-renderer-react-components";
+import { GovTechCertificateTemplate } from "../types";
 
 export const sampleCertificate: GovTechCertificateTemplate = {
   name: "Certificate of Achievement",
   recipient: {
-    firstName: "Jia Jian",
-    lastName: "Goi"
+    firstName: "Steven",
+    lastName: "Koh"
   },
   programme: {
     name: "GovTech Internship Programme",
     startDate: "4-May-20",
     endDate: "7-Oct-20"
   },
+  issuers: [
+    {
+      name: "GovTech Singapore"
+    }
+  ],
+  recommendations: [
+    {
+      recommendation:
+        "Steven has managed to build a team culture that is open, autonomous, innovative and progressive within a traditionally bureaucratic environment. It allows motivated and independent people to grow and do their best work. I definitely feel I've experienced the most professional and personal growth in the time I worked with him.",
+      name: "LinkedIn User 1"
+    },
+    {
+      recommendation:
+        "Steven is an empowering leader who is also extremely passionate about engineering excellence and has the know-how to mentor and drive engineers. In our time together at GovTech, he has enabled a period of high personal and professional growth for me through consistent 1-1s with him and having the opportunity to observe him at work with those of his level and even above him. Never one to back down from a fight that needs to happen, he also manages to demonstrate sincere kindness to those around him: ingredients of a powerful leader. His passion for engineering, empowering methods of managing people, and individual engineering competency has served and will continue serve as a role model for me in my career and I’m grateful for the opportunity to have been working with him.",
+      name: "LinkedIn User 2"
+    }
+  ],
   signatory: {
     name: "Evangeline Chua",
     position: "Chief People Officer",
@@ -41,7 +38,7 @@ export const sampleCertificate: GovTechCertificateTemplate = {
   },
   $template: {
     name: "CERTIFICATE_OF_ACHIEVEMENT",
-    type: "EMBEDDED_RENDERER",
+    type: v2.TemplateType.EmbeddedRenderer,
     url: "http://localhost:3000"
   }
 };

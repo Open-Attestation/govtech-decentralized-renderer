@@ -1,19 +1,19 @@
 import ReactDOM from "react-dom";
-import { customTemplateCertificate } from "../src/templates/sample";
+import { sampleCertificate } from "../src/templates/sample";
 import React from "react";
 import { App } from "./app";
 
 ReactDOM.render(
   <App
     documents={[
-      { name: "Default document", document: customTemplateCertificate },
+      { name: "Default document", document: sampleCertificate },
       {
         name: "Red document",
         document: {
-          ...customTemplateCertificate,
+          ...sampleCertificate,
           foo: "bar",
           $template: {
-            ...customTemplateCertificate.$template,
+            ...sampleCertificate.$template,
             name: "red"
           }
         }

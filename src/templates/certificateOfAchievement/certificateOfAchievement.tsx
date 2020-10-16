@@ -2,16 +2,17 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
 import { format } from "date-fns";
-import { GovTechCertificateTemplate } from "../sample";
 import certificateBase from "../../core/certificate-base.png";
+import { containerCustom } from "./utils/styles";
+import { GovTechCertificateTemplate } from "./types";
 
+// setting width explicitly, due to how bg image's composition is prepped
 const container = css`
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  ${containerCustom()};
   color: #4e4e50;
   text-align: center;
-  width: 1350px;
-  position: relative;
-  margin: 0 auto;
+  width: 1280px;
+
   @media print {
     @page {
       size: landscape;
@@ -19,19 +20,20 @@ const container = css`
   }
 `;
 
+// setting width explicitly, due to how bg image's composition is prepped
 const imageRegion = css`
   position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1350px;
+  top: 0;
+  left: 0;
   z-index: -1;
+  width: 1280px;
 `;
 
 const textRegion = css`
-  position: relative;
-  top: 275px;
-  left: 95px;
+  display: inline-block;
   text-align: center;
+  margin-top: 270px;
+  margin-left: 190px;
 `;
 
 const documentTitle = css`
