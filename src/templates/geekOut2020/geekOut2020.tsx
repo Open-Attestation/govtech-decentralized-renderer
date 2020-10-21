@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { css } from "@emotion/core";
 import { format } from "date-fns";
-import { GeekOut2020CertificateTemplate } from "../sampleGO";
+import { GeekOutCertificateTemplate } from "./types";
 import certificateBase from "../../core/GO-certBase.png";
 
 const container = css`
@@ -71,7 +71,7 @@ const signatory = css`
   text-align: center;
 `;
 
-export const GeekOut2020: FunctionComponent<TemplateProps<GeekOut2020CertificateTemplate> & {
+export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemplate> & {
   className?: string;
 }> = ({ document, className = "" }) => {
   return (
@@ -82,7 +82,7 @@ export const GeekOut2020: FunctionComponent<TemplateProps<GeekOut2020Certificate
             {format(new Date(document.programme.startDate), "d MMM yyyy")} to{" "}
             {format(new Date(document.programme.endDate), "d MMM yyyy")}
           </div>
-          <div id="programme-name" css={programmeName}>
+          <div id="congratulations" css={programmeName}>
             Congratulations
           </div>
 

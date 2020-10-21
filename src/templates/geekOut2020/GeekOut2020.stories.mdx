@@ -1,7 +1,7 @@
 import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
 import { object } from "@storybook/addon-knobs";
 import { GeekOut2020 } from "./geekOut2020";
-import { sampleCertificate } from "../sampleGO";
+import { sampleCertificate } from "./fixtures/sample";
 
 <Meta title="MDX|CustomTemplateGeekOut" component={GeekOut2020} />
 
@@ -16,7 +16,7 @@ import { sampleCertificate } from "../sampleGO";
 # Usage
 
 <Preview>
-  <Story name="basic sample">
+  <Story name="GeekOut 2020 Certificate">
     <GeekOut2020 document={object("document", sampleCertificate)} />
   </Story>
 </Preview>
