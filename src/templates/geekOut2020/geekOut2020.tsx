@@ -3,7 +3,7 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { css } from "@emotion/core";
 import { format } from "date-fns";
 import { GeekOutCertificateTemplate } from "./types";
-import certificateBase from "../../core/GO-certBase.png";
+import certificateBase from "../../core/geekout-certificate-base.png";
 
 const container = css`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
