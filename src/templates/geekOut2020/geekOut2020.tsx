@@ -79,8 +79,8 @@ export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemp
       <div css={container} className={className} id="certificate-of-achievement">
         <div css={textRegion}>
           <div id="date-range" css={dateRange}>
-            {format(new Date(document.programme.startDate.replace(/-/g, "/")), "d MMM yyyy")} to{" "}
-            {format(new Date(document.programme.endDate.replace(/-/g, "/")), "d MMM yyyy")}
+            {format(new Date(document.programme.startDate), "d MMM yyyy")} to{" "}
+            {format(new Date(document.programme.endDate), "d MMM yyyy")}
           </div>
           <div id="congratulations" css={programmeName}>
             Congratulations
