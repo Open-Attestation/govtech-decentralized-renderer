@@ -10,6 +10,7 @@ const container = css`
   color: #4d4d4e;
   text-align: center;
   width: 1350px;
+  height: 1000px;
   position: relative;
   margin: 0 auto;
   @media print {
