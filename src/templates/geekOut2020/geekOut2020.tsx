@@ -75,6 +75,7 @@ const signatory = css`
 export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemplate> & {
   className?: string;
 }> = ({ document, className = "" }) => {
+  console.error("Date not in ISO format: eg. 2020-10-12");
   return (
     <>
       <div css={container} className={className} id="certificate-of-achievement">
