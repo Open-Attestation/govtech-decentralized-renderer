@@ -40,6 +40,8 @@ const recipientName = css`
   font-style: italic;
   margin-bottom: 16px;
   color: #30509b;
+  word-break: break-word;
+  margin-left: 900px;
 `;
 
 const programmeName = css`
@@ -72,17 +74,21 @@ const signatory = css`
   text-align: center;
 `;
 
-export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemplate> & {
-  className?: string;
-}> = ({ document, className = "" }) => {
-  console.error("Date not in ISO format: eg. 2020-10-12");
+export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemplate>> = ({ document }) => {
+  const processInputDate = (input: string): string => {
+    try {
+      return format(new Date(input), "d MMM yyyy");
+    } catch (e) {
+      console.error(`Date ${input} is not in ISO format try something like 2020-10-12.`);
+      return "";
+    }
+  };
   return (
     <>
-      <div css={container} className={className} id="certificate-of-achievement">
+      <div css={container} id="certificate-of-achievement">
         <div css={textRegion}>
           <div id="date-range" css={dateRange}>
-            {format(new Date(document.programme.startDate), "d MMM yyyy")} to{" "}
-            {format(new Date(document.programme.endDate), "d MMM yyyy")}
+            {processInputDate(document.programme.startDate)} to {processInputDate(document.programme.endDate)}
           </div>
           <div id="congratulations" css={programmeName}>
             Congratulations
