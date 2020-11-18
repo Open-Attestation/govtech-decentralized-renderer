@@ -41,7 +41,8 @@ const recipientName = css`
   margin-bottom: 16px;
   color: #30509b;
   word-break: break-word;
-  margin-left: 900px;
+  max-width: 550px;
+  margin-left: auto;
 `;
 
 const programmeName = css`
@@ -51,7 +52,7 @@ const programmeName = css`
 
 const quote = css`
   font-size: 30px;
-  margin-bottom: 65px;
+  margin-bottom: 30px;
   color: #f47921;
 `;
 
@@ -64,13 +65,12 @@ const dateRange = css`
 `;
 
 const signature = css`
-  max-height: 90px;
+  max-height: 85px;
   margin-right: 530px;
 `;
 
 const signatory = css`
   font-size: 20px;
-  right: 200px;
   text-align: center;
 `;
 
