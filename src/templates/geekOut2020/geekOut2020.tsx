@@ -11,6 +11,8 @@ const Container = styled.div`
   width: 1280px;
   height: 884px;
   font-size: 22px;
+  margin-left: auto;
+  margin-right: auto;
   @media print {
     @page {
       size: landscape;
