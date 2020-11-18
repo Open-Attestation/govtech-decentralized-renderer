@@ -1,77 +1,85 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { css } from "@emotion/core";
 import { format } from "date-fns";
 import { GeekOutCertificateTemplate } from "./types";
 import certificateBase from "../../core/geekout-certificate-base.png";
+import styled from "@emotion/styled";
 
-const container = css`
+const Container = styled.div`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: #4d4d4e;
-  text-align: center;
-  width: 1350px;
-  height: 1000px;
   position: relative;
-  margin: 0 auto;
+  width: 1280px;
+  height: 884px;
+  font-size: 22px;
   @media print {
     @page {
       size: landscape;
     }
   }
-`;
 
-const imageRegion = css`
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1350px;
-  z-index: -1;
-`;
+  .bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 100%;
+  }
 
-const textRegion = css`
-  position: relative;
-  top: 460px;
-  right: 50px;
-  text-align: right;
-`;
+  .text-region {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    text-align: right;
+    color: #4d4d4d;
+  }
 
-const recipientName = css`
-  font-size: 40px;
-  font-style: italic;
-  margin-bottom: 16px;
-  color: #30509b;
-  word-break: break-word;
-  max-width: 550px;
-  margin-left: auto;
-`;
+  .recipient-details {
+    max-width: 500px;
+    margin-left: auto;
+  }
 
-const programmeName = css`
-  font-size: 22px;
-  margin-bottom: 16px;
-`;
+  .recipient-name {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+  }
 
-const quote = css`
-  font-size: 30px;
-  margin-bottom: 30px;
-  color: #f47921;
-`;
+  .quote {
+    font-size: 28px;
+  }
 
-const dateRange = css`
-  font-size: 22px;
-  text-align: left;
-  margin-left: 280px;
-  top: 0px;
-  color: #ffffff;
-`;
+  .signatory {
+    margin-right: 400px;
+    font-size: 20px;
 
-const signature = css`
-  max-height: 85px;
-  margin-right: 530px;
-`;
+    img {
+      max-width: 250px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
-const signatory = css`
-  font-size: 20px;
-  text-align: center;
+  .date {
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -450px;
+    margin-top: -16px;
+  }
+
+  .text-blue {
+    color: #30509b;
+  }
+
+  .text-orange {
+    color: #f47921;
+  }
+
+  .text-center {
+    text-align: center;
+  }
 `;
 
 export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemplate>> = ({ document }) => {
@@ -85,36 +93,29 @@ export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemp
   };
   return (
     <>
-      <div css={container} id="certificate-of-achievement">
-        <div css={textRegion}>
-          <div id="date-range" css={dateRange}>
-            {processInputDate(document.programme.startDate)} to {processInputDate(document.programme.endDate)}
+      <Container id="certificate-of-achievement">
+        <img className="bg-pattern" src={certificateBase} />
+        <div className="date" id="date-range">
+          {processInputDate(document.programme.startDate)} to {processInputDate(document.programme.endDate)}
+        </div>
+        <div className="text-region">
+          <div className="recipient-details">
+            <div id="congratulations">Congratulations</div>
+            <h1 className="text-blue recipient-name" id="recipient-name">
+              {document.recipient.name}
+            </h1>
+            <div id="programme-name">for successfully completing {document.programme.name}!</div>
           </div>
-          <div id="congratulations" css={programmeName}>
-            Congratulations
-          </div>
-
-          <div id="recipient-name" css={recipientName}>
-            {document.recipient.name}
-          </div>
-
-          <div id="programme-name" css={programmeName}>
-            for successfully completing {document.programme.name}!
-          </div>
-          <div id="quote" css={quote}>
+          <h3 className="text-orange quote" id="quote">
             <strong>Accept nothing less than your goals!</strong>
-          </div>
-
-          <img css={signature} src={document.signatory.signature} />
-          <div css={signatory}>
+          </h3>
+          <div className="signatory text-center">
+            <img src={document.signatory.signature} />
             <strong id="signatory-name">{document.signatory.name}</strong>
-          </div>
-          <div id="signatory-position" css={signatory}>
-            {document.signatory.position}
+            <div id="signatory-position">{document.signatory.position}</div>
           </div>
         </div>
-        <img css={imageRegion} src={certificateBase} />
-      </div>
+      </Container>
     </>
   );
 };
