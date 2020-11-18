@@ -3,7 +3,7 @@ import { GeekOutCertificateTemplate } from "../types";
 
 export const sampleCertificate: GeekOutCertificateTemplate = {
   recipient: {
-    name: "Muhamad Rifqi Harits Bin Mohd Raffi"
+    name: "Alice Tan"
   },
   programme: {
     name: "GeekOut 2020",
