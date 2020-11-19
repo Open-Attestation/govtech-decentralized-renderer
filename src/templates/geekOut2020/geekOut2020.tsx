@@ -95,7 +95,7 @@ export const GeekOut2020: FunctionComponent<TemplateProps<GeekOutCertificateTemp
   };
   return (
     <>
-      <Container id="certificate-of-achievement">
+      <Container id="geekout-cert">
         <img className="bg-pattern" src={certificateBase} />
         <div className="date" id="date-range">
           {processInputDate(document.programme.startDate)} to {processInputDate(document.programme.endDate)}
