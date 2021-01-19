@@ -10,12 +10,7 @@ export const CovidLetterOfAppreciationSampleData: CovidLetterOfAppreciationInter
   },
   issuers: [
     {
-      name: "GovTech Singapore",
-      documentStore: "0xBBb55Bd1D709955241CAaCb327A765e2b6D69c8b",
-      identityProof: {
-        type: "DNS-TXT",
-        location: "few-green-cat.sandbox.openattestation.com"
-      }
+      name: "GovTech Singapore"
     }
   ],
   signatory: {
