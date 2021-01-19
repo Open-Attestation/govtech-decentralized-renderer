@@ -1,11 +1,86 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-// import { css } from "@emotion/core";
+import styled  from "@emotion/styled";
 import { CovidCOAInterface } from "./types";
 import { get } from "lodash";
-import "./templateStyle.css";
 import govTechLogo from "./img/GovtechLogo.jpg";
 
+const Container = styled.div`
+.template-container {
+  height: 297mm;
+  width: 210mm;
+  position: relative;
+  background-color: white;
+  color: black;
+  font-family: "Arial";
+  font-size: 12pt;
+  padding: 35px 70px;
+  margin: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.template-header {
+  text-align: right;
+}
+
+.template-header img {
+  width: 30%;
+}
+
+.recipient-table {
+  margin-top: 68px;
+}
+
+.recipient-table p {
+  margin: 0px 0px 5px 0px;
+  line-height: 16pt;
+}
+
+.main-content {
+  width: 90%;
+  word-spacing: 1px;
+  margin-top: 38px;
+}
+
+.main-content p {
+  line-height: 16pt;
+  margin-top: 25px;
+}
+
+.main-content p:nth-child(2) {
+  margin: 21px 0px 21px 0px;
+}
+
+.main-content img {
+  width: 30%;
+  margin-top: 40px;
+}
+
+.main-content p:last-child {
+  margin-top: 5px;
+}
+
+.template-footer {
+  position: absolute;
+  bottom: 50px;
+  font-size: 8pt;
+  line-height: 9.65pt;
+  letter-spacing: 1px;
+  color: #595a5a;
+}
+
+.template-footer p:first-child,
+.template-footer p span {
+  color: #3fb4f0;
+}
+
+.template-footer p span {
+  margin-right: 5px;
+}
+
+
+
+`
 export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface> & { className?: string }> = ({
   document
 }) => {
@@ -16,6 +91,7 @@ export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface
   const signature = get(document, "signature");
 
   return (
+    <Container>
     <div className="template-container">
       <div className="template-header">
         <img src={govTechLogo} alt="GovTech Logo" />
@@ -63,5 +139,6 @@ export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface
         </p>
       </div>
     </div>
+    </Container>
   );
 };
