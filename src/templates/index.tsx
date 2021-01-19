@@ -1,7 +1,7 @@
 import { TemplateRegistry } from "@govtechsg/decentralized-renderer-react-components";
 import { templates } from "./certificateOfAchievement";
 import { geekOut2020Template } from "./geekOut2020";
-import {covidCOATemplates} from "./covidAppreciationLetter"
+import { covidCOATemplates } from "./covidAppreciationLetter";
 
 export const registry: TemplateRegistry<any> = {
   CERTIFICATE_OF_ACHIEVEMENT: templates,

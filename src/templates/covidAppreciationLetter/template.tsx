@@ -4,11 +4,10 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import { CovidCOAInterface } from "./types";
 import { get } from "lodash";
 import "./templateStyle.css";
-import GovTech_Logo from "./img/GovtechLogo.jpg";
+import govTechLogo from "./img/GovtechLogo.jpg";
 
 export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface> & { className?: string }> = ({
-  document,
-  className = ""
+  document
 }) => {
   const recipientName = get(document, "recipient.name");
   const recipientFirstName = get(document, "recipient.firstName");
@@ -19,7 +18,7 @@ export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface
   return (
     <div className="template-container">
       <div className="template-header">
-        <img src={GovTech_Logo} alt="GovTech Logo" />
+        <img src={govTechLogo} alt="GovTech Logo" />
       </div>
       <div className="recipient-table">
         <p>{recipientName}</p>
