@@ -1,22 +1,22 @@
 import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
 import { object } from "@storybook/addon-knobs";
-import { CovidCOATemplate } from "./template";
-import { covidCOASampleData } from "./fixtures/sample";
+import { CovidLetterOfAppreciationTemplate } from "./template";
+import { CovidLetterOfAppreciationSampleData } from "./fixtures/sample";
 
-<Meta title="MDX|CovidTemplate" component={CovidCOATemplate} />
+<Meta title="MDX|CovidTemplate" component={CovidLetterOfAppreciationTemplate} />
 
-# CovidCOATemplate component
+# CovidLetterOfAppreciationTemplate component
 
-<Description of={CovidCOATemplate} />
+<Description of={CovidLetterOfAppreciationTemplate} />
 
 # Props
 
-<Props of={CovidCOATemplate} />
+<Props of={CovidLetterOfAppreciationTemplate} />
 
 # Usage
 
 <Preview>
   <Story name="Covid Appreciation Letter">
-    <CovidCOATemplate document={object("document", covidCOASampleData)} />
+    <CovidLetterOfAppreciationTemplate document={object("document", CovidLetterOfAppreciationSampleData)} />
   </Story>
 </Preview>

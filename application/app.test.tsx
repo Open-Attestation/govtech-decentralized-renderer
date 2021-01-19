@@ -1,6 +1,8 @@
 import { App } from "./app";
 import { sampleCertificate as certificateOfAchievement } from "../src/templates/certificateOfAchievement/fixtures/sample";
 import { sampleCertificate as geekOut2020 } from "../src/templates/geekOut2020/fixtures/sample";
+import { CovidLetterOfAppreciationSampleData as covidLetterOfAppreciation } from "../src/templates/covidAppreciationLetter/fixtures/sample";
+
 import { fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";
@@ -11,7 +13,8 @@ describe("application", () => {
       <App
         documents={[
           { name: "GovTech document - Certificate of Achievement", document: certificateOfAchievement },
-          { name: "GovTech document - GeekOut 2020", document: geekOut2020 }
+          { name: "GovTech document - GeekOut 2020", document: geekOut2020 },
+          { name: "GovTech document - Covid Appreciation Letter", document: covidLetterOfAppreciation }
         ]}
       />
     );
