@@ -1,9 +1,9 @@
-import { CovidCOATemplate } from "./template";
+import { CovidLetterOfAppreciationTemplate } from "./template";
 
-export const covidCOATemplates = [
+export const covidLetterOfAppreciationTemplate = [
   {
     id: "COVID_LETTER_OF_APPRECIATION_2021",
     label: "Letter of Appreciation",
-    template: CovidCOATemplate
+    template: CovidLetterOfAppreciationTemplate
   }
 ];

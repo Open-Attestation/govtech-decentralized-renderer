@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import styled from "@emotion/styled";
-import { CovidCOAInterface } from "./types";
-import { get } from "lodash";
+import { CovidLetterOfAppreciationInterface } from "./types";
 import govTechLogo from "./img/GovtechLogo.jpg";
 
 const Container = styled.div`
@@ -47,7 +46,7 @@ const Container = styled.div`
     margin-top: 25px;
   }
 
-  .main-content p:nth-child(2) {
+  .main-content p:nth-of-type(2) {
     margin: 21px 0px 21px 0px;
   }
 
@@ -69,7 +68,7 @@ const Container = styled.div`
     color: #595a5a;
   }
 
-  .template-footer p:first-child,
+  .template-footer p:nth-of-type(1),
   .template-footer p span {
     color: #3fb4f0;
   }
@@ -78,14 +77,14 @@ const Container = styled.div`
     margin-right: 5px;
   }
 `;
-export const CovidCOATemplate: FunctionComponent<TemplateProps<CovidCOAInterface> & { className?: string }> = ({
-  document
-}) => {
-  const recipientName = get(document, "recipient.name");
-  const recipientFirstName = get(document, "recipient.firstName");
-  const recipientDivision = get(document, "recipient.division");
-  const recipientSite = get(document, "recipient.site");
-  const signature = get(document, "signature");
+export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<CovidLetterOfAppreciationInterface> & {
+  className?: string;
+}> = ({ document }) => {
+  const recipientName = document.recipient.name;
+  const recipientFirstName = document.recipient.firstName;
+  const recipientDivision = document.recipient.division;
+  const recipientSite = document.recipient.site;
+  const signature = document.signatory.signature;
 
   return (
     <Container>
