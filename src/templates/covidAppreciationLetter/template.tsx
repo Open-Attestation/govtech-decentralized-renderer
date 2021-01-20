@@ -81,14 +81,13 @@ const Container = styled.div`
   @media print {
     .template-container {
       box-shadow: none;
-      margin: 0px;
+      margin: 0;
       border: none;
     }
   }
 
   @page {
-    size: auto;
-    margin: 0px;
+    margin: 0;
   }
 `;
 export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<CovidLetterOfAppreciationInterface> & {
