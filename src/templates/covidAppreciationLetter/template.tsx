@@ -6,8 +6,9 @@ import govTechLogo from "./img/GovtechLogo.jpg";
 
 const Container = styled.div`
   .template-container {
-    height: 297mm;
     width: 210mm;
+    height: 297mm;
+    display: block;
     position: relative;
     background-color: white;
     color: black;
@@ -75,6 +76,19 @@ const Container = styled.div`
 
   .template-footer p span {
     margin-right: 5px;
+  }
+
+  @media print {
+    .template-container {
+      box-shadow: none;
+      margin: 0px;
+      border: none;
+    }
+  }
+
+  @page {
+    size: auto;
+    margin: 0px;
   }
 `;
 export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<CovidLetterOfAppreciationInterface> & {
