@@ -2,6 +2,7 @@ import ReactDOM from "react-dom";
 import { sampleCertificate as certificateOfAchievement } from "../src/templates/certificateOfAchievement/fixtures/sample";
 import { sampleCertificate as geekOut2020 } from "../src/templates/geekOut2020/fixtures/sample";
 import { CovidLetterOfAppreciationSampleData as CovidLetterOfAppreciation } from "../src/templates/covidAppreciationLetter/fixtures/sample";
+import { XMLRendererSampleData } from "../src/templates/xmlRenderer/fixtures/sample";
 import React from "react";
 import { App } from "./app";
 
@@ -10,7 +11,8 @@ ReactDOM.render(
     documents={[
       { name: "GovTech document - Certificate of Achievement", document: certificateOfAchievement },
       { name: "GovTech document - GeekOut 2020", document: geekOut2020 },
-      { name: "GovTech document - Covid Appreciation Letter", document: CovidLetterOfAppreciation }
+      { name: "GovTech document - Covid Appreciation Letter", document: CovidLetterOfAppreciation },
+      { name: "GovTech document - XML Renderer", document: XMLRendererSampleData }
     ]}
   />,
   document.getElementById("root")
