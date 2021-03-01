@@ -3,6 +3,7 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import styled from "@emotion/styled";
 import { CovidLetterOfAppreciationInterface } from "./types";
 import govTechLogo from "./img/GovtechLogo.jpg";
+import ceoSignature from "./img/CEOSignature.jpg";
 
 const Container = styled.div`
   .template-container {
@@ -21,43 +22,52 @@ const Container = styled.div`
 
   .template-header {
     text-align: right;
-  }
 
-  .template-header img {
-    width: 30%;
+    img {
+      width: 30%;
+    }
   }
 
   .recipient-table {
     margin-top: 68px;
-  }
 
-  .recipient-table p {
-    margin: 0px 0px 5px 0px;
-    line-height: 16pt;
+    p {
+      margin: 0px 0px 5px 0px;
+      line-height: 16pt;
+    }
   }
 
   .main-content {
     width: 90%;
     word-spacing: 1px;
     margin-top: 38px;
+
+    p {
+      line-height: 16pt;
+      margin-top: 25px;
+    }
+
+    p:nth-of-type(2) {
+      margin: 21px 0px 21px 0px;
+    }
+
+    img {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    p:last-child {
+      margin-top: 5px;
+    }
   }
 
-  .main-content p {
-    line-height: 16pt;
-    margin-top: 25px;
-  }
+  .signature-section p {
+    margin: 0px;
 
-  .main-content p:nth-of-type(2) {
-    margin: 21px 0px 21px 0px;
-  }
-
-  .main-content img {
-    width: 30%;
-    margin-top: 40px;
-  }
-
-  .main-content p:last-child {
-    margin-top: 5px;
+    p:last-child {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
   }
 
   .template-footer {
@@ -67,15 +77,19 @@ const Container = styled.div`
     line-height: 9.65pt;
     letter-spacing: 1px;
     color: #595a5a;
-  }
 
-  .template-footer p:nth-of-type(1),
-  .template-footer p span {
-    color: #3fb4f0;
-  }
+    p:nth-of-type(1) {
+      color: #3fb4f0;
+    }
 
-  .template-footer p span {
-    margin-right: 5px;
+    p span {
+      color: #3fb4f0;
+      margin-right: 5px;
+    }
+
+    .issue-date {
+      margin-top: 38px;
+    }
   }
 
   @media print {
@@ -96,8 +110,7 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
   const recipientName = document.recipient.name;
   const recipientFirstName = document.recipient.firstName;
   const recipientDivision = document.recipient.division;
-  const recipientSite = document.recipient.site;
-  const signature = document.signatory.signature;
+  const issuedOn = document.issuedOn;
 
   return (
     <Container>
@@ -107,24 +120,24 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
         </div>
         <div className="recipient-table">
           <p>{recipientName}</p>
-          <p>
-            {recipientDivision}({recipientSite})
-          </p>
+          <p>{recipientDivision}</p>
           <p>Government Technology Agency</p>
         </div>
-
+        <p className="issue-date">{issuedOn}</p>
         <div className="main-content">
           <p>Dear {recipientFirstName},</p>
-          <p>THANK YOU FOR YOUR COVID-19 CONTRIBUTION</p>
+          <p>THANK YOU FOR GOING THE EXTRA MILE</p>
           <p>
             It has been said many times and many ways that 2020 was an extraordinary year; the GovTech Leadership Team
             cannot agree more with that. In these early days of Phase 3, the Leadership Team and I would like to take
-            this opportunity to sincerely thank you for your contribution in the past year to get us here.
+            this opportunity to sincerely thank you for your contribution beyond the call of duty in the past year, to
+            get us here.
           </p>
           <p>
             Whilst the year had brought its challenges, we also appreciate that 2020 brought out the best in all of us.
             Embracing our ABC values has kept us laser focused on our mission of materializing a digital government,
-            while dealing with the pandemic and keeping each other and our fellow Singaporeans safe.
+            even while playing our part in dealing with the pandemic and keeping each other and our fellow Singaporeans
+            safe.
           </p>
           <p>
             There is still a long journey ahead of us as we move into Phase 3 and beyond, we urge you to adopt a
@@ -133,8 +146,11 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
           </p>
           <p>Meanwhile, remain safe. Onwards and upwards. Thank you.</p>
 
-          <img src={signature} />
-          <p>Kok Ping Soon</p>
+          <div className="signature-section">
+            <img className="signature" src={ceoSignature} alt="CEO Signature" />
+            <p>Kok Ping Soon</p>
+            <p>Chief Executive</p>
+          </div>
         </div>
 
         <div className="template-footer">
