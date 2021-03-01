@@ -22,52 +22,52 @@ const Container = styled.div`
 
   .template-header {
     text-align: right;
-  }
 
-  .template-header img {
-    width: 30%;
+    img {
+      width: 30%;
+    }
   }
 
   .recipient-table {
     margin-top: 68px;
-  }
 
-  .recipient-table p {
-    margin: 0px 0px 5px 0px;
-    line-height: 16pt;
+    p {
+      margin: 0px 0px 5px 0px;
+      line-height: 16pt;
+    }
   }
 
   .main-content {
     width: 90%;
     word-spacing: 1px;
     margin-top: 38px;
-  }
 
-  .main-content p {
-    line-height: 16pt;
-    margin-top: 25px;
-  }
+    p {
+      line-height: 16pt;
+      margin-top: 25px;
+    }
 
-  .main-content p:nth-of-type(2) {
-    margin: 21px 0px 21px 0px;
-  }
+    p:nth-of-type(2) {
+      margin: 21px 0px 21px 0px;
+    }
 
-  .main-content img {
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
+    img {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
 
-  .main-content p:last-child {
-    margin-top: 5px;
+    p:last-child {
+      margin-top: 5px;
+    }
   }
 
   .signature-section p {
     margin: 0px;
-  }
 
-  .signature-section p:last-child {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    p:last-child {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
   }
 
   .template-footer {
@@ -77,19 +77,19 @@ const Container = styled.div`
     line-height: 9.65pt;
     letter-spacing: 1px;
     color: #595a5a;
-  }
 
-  .template-footer p:nth-of-type(1),
-  .template-footer p span {
-    color: #3fb4f0;
-  }
+    p:nth-of-type(1) {
+      color: #3fb4f0;
+    }
 
-  .template-footer p span {
-    margin-right: 5px;
-  }
+    p span {
+      color: #3fb4f0;
+      margin-right: 5px;
+    }
 
-  .issue-date {
-    margin-top: 38px;
+    .issue-date {
+      margin-top: 38px;
+    }
   }
 
   @media print {
