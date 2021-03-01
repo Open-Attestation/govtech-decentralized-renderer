@@ -1,5 +1,5 @@
 {
-  "network": "mainnet",
+  "network": "homestead",
   "wallet": "<wallet address>",
   "forms": [
     {
