@@ -13,7 +13,7 @@ describe("covidAppreciationLetter", () => {
       />
     );
     expect(getByText("Steven Koh")).toBeInTheDocument();
-    expect(getByText("GDS(Sandcrawler)")).toBeInTheDocument();
+    expect(getByText("GDS")).toBeInTheDocument();
     expect(getByText("Dear Steven,")).toBeInTheDocument();
     expect(getByText("Kok Ping Soon")).toBeInTheDocument();
   });

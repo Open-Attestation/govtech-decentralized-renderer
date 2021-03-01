@@ -5,9 +5,6 @@ export interface CovidLetterOfAppreciationInterface extends v2.OpenAttestationDo
     name: string;
     firstName: string;
     division: string;
-    site: string;
   };
-  signatory: {
-    signature: string;
-  };
+  issuedOn: string;
 }
