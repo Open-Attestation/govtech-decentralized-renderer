@@ -61,17 +61,13 @@ const Container = styled.div`
     margin-top: 5px;
   }
 
-  .signature-section {
-  }
   .signature-section p {
     margin: 0px;
   }
+
   .signature-section p:last-child {
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  .signature {
   }
 
   .template-footer {
