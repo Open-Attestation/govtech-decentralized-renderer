@@ -3,6 +3,7 @@ import { TemplateProps } from "@govtechsg/decentralized-renderer-react-component
 import styled from "@emotion/styled";
 import { CovidLetterOfAppreciationInterface } from "./types";
 import govTechLogo from "./img/GovtechLogo.jpg";
+import ceoSignature from "./img/CEOSignature.jpg";
 
 const Container = styled.div`
   .template-container {
@@ -52,12 +53,25 @@ const Container = styled.div`
   }
 
   .main-content img {
-    width: 30%;
-    margin-top: 40px;
+    margin-top: 15px;
+    margin-bottom: 10px;
   }
 
   .main-content p:last-child {
     margin-top: 5px;
+  }
+
+  .signature-section {
+  }
+  .signature-section p {
+    margin: 0px;
+  }
+  .signature-section p:last-child {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .signature {
   }
 
   .template-footer {
@@ -78,6 +92,10 @@ const Container = styled.div`
     margin-right: 5px;
   }
 
+  .issue-date {
+    margin-top: 38px;
+  }
+
   @media print {
     .template-container {
       box-shadow: none;
@@ -96,8 +114,7 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
   const recipientName = document.recipient.name;
   const recipientFirstName = document.recipient.firstName;
   const recipientDivision = document.recipient.division;
-  const recipientSite = document.recipient.site;
-  const signature = document.signatory.signature;
+  const issuedOn = document.issuedOn;
 
   return (
     <Container>
@@ -107,24 +124,24 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
         </div>
         <div className="recipient-table">
           <p>{recipientName}</p>
-          <p>
-            {recipientDivision}({recipientSite})
-          </p>
+          <p>{recipientDivision}</p>
           <p>Government Technology Agency</p>
         </div>
-
+        <p className="issue-date">{issuedOn}</p>
         <div className="main-content">
           <p>Dear {recipientFirstName},</p>
-          <p>THANK YOU FOR YOUR COVID-19 CONTRIBUTION</p>
+          <p>THANK YOU FOR GOING THE EXTRA MILE</p>
           <p>
             It has been said many times and many ways that 2020 was an extraordinary year; the GovTech Leadership Team
             cannot agree more with that. In these early days of Phase 3, the Leadership Team and I would like to take
-            this opportunity to sincerely thank you for your contribution in the past year to get us here.
+            this opportunity to sincerely thank you for your contribution beyond the call of duty in the past year, to
+            get us here.
           </p>
           <p>
             Whilst the year had brought its challenges, we also appreciate that 2020 brought out the best in all of us.
             Embracing our ABC values has kept us laser focused on our mission of materializing a digital government,
-            while dealing with the pandemic and keeping each other and our fellow Singaporeans safe.
+            even while playing our part in dealing with the pandemic and keeping each other and our fellow Singaporeans
+            safe.
           </p>
           <p>
             There is still a long journey ahead of us as we move into Phase 3 and beyond, we urge you to adopt a
@@ -133,8 +150,11 @@ export const CovidLetterOfAppreciationTemplate: FunctionComponent<TemplateProps<
           </p>
           <p>Meanwhile, remain safe. Onwards and upwards. Thank you.</p>
 
-          <img src={signature} />
-          <p>Kok Ping Soon</p>
+          <div className="signature-section">
+            <img className="signature" src={ceoSignature} alt="CEO Signature" />
+            <p>Kok Ping Soon</p>
+            <p>Chief Executive</p>
+          </div>
         </div>
 
         <div className="template-footer">
