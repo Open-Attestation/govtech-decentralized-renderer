@@ -6,26 +6,64 @@ import govTechLogo from "./img/GovtechLogo.jpg";
 import ceoSignature from "./img/CEOSignature.jpg";
 
 const Container = styled.div`
+  @media (max-width: 767px) {
+    .template-container {
+      padding: 15px 20px;
+      max-width: 210mm;
+      height: auto;
+    }
+
+    .template-header {
+      text-align: center;
+      img {
+        margin-top: 30px;
+        width: 70%;
+      }
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    .template-footer {
+      position: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .template-container {
+      padding: 35px 70px;
+      max-width: 210mm;
+      height: 297mm;
+    }
+
+    .template-header {
+      text-align: right;
+      img {
+        width: 30%;
+      }
+    }
+
+    .main-content {
+      width: 90%;
+    }
+
+    .template-footer {
+      position: absolute;
+      bottom: 50px;
+    }
+  }
+
   .template-container {
-    width: 210mm;
-    height: 297mm;
     display: block;
     position: relative;
     background-color: white;
     color: black;
     font-family: "Arial";
     font-size: 12pt;
-    padding: 35px 70px;
+
     margin: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-
-  .template-header {
-    text-align: right;
-
-    img {
-      width: 30%;
-    }
   }
 
   .recipient-table {
@@ -38,7 +76,6 @@ const Container = styled.div`
   }
 
   .main-content {
-    width: 90%;
     word-spacing: 1px;
     margin-top: 38px;
 
@@ -71,8 +108,6 @@ const Container = styled.div`
   }
 
   .template-footer {
-    position: absolute;
-    bottom: 50px;
     font-size: 8pt;
     line-height: 9.65pt;
     letter-spacing: 1px;
