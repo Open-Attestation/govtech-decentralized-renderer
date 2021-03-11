@@ -7,24 +7,43 @@ import ceoSignature from "./img/CEOSignature.jpg";
 
 const Container = styled.div`
   .template-container {
-    width: 210mm;
-    height: 297mm;
+    @media screen and (max-device-width: 767px) {
+      padding: 15px 20px;
+      max-width: 210mm;
+      height: auto;
+    }
+
+    @media screen and (min-device-width: 768px) {
+      padding: 35px 70px;
+      max-width: 210mm;
+      height: 297mm;
+    }
+
     display: block;
     position: relative;
     background-color: white;
     color: black;
     font-family: "Arial";
     font-size: 12pt;
-    padding: 35px 70px;
+
     margin: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
   .template-header {
-    text-align: right;
+    @media screen and (max-device-width: 767px) {
+      text-align: center;
+      img {
+        margin-top: 30px;
+        width: 70%;
+      }
+    }
 
-    img {
-      width: 30%;
+    @media screen and (min-device-width: 768px) {
+      text-align: right;
+      img {
+        width: 30%;
+      }
     }
   }
 
@@ -38,7 +57,14 @@ const Container = styled.div`
   }
 
   .main-content {
-    width: 90%;
+    @media screen and (max-device-width: 767px) {
+      width: 100%;
+    }
+
+    @media screen and (min-device-width: 768px) {
+      width: 90%;
+    }
+
     word-spacing: 1px;
     margin-top: 38px;
 
@@ -71,8 +97,15 @@ const Container = styled.div`
   }
 
   .template-footer {
-    position: absolute;
-    bottom: 50px;
+    @media screen and (max-device-width: 767px) {
+      position: block;
+    }
+
+    @media screen and (min-device-width: 768px) {
+      position: absolute;
+      bottom: 50px;
+    }
+
     font-size: 8pt;
     line-height: 9.65pt;
     letter-spacing: 1px;
