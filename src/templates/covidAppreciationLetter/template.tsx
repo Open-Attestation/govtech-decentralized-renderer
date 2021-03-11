@@ -6,19 +6,55 @@ import govTechLogo from "./img/GovtechLogo.jpg";
 import ceoSignature from "./img/CEOSignature.jpg";
 
 const Container = styled.div`
-  .template-container {
-    @media screen and (max-device-width: 767px) {
+  @media (max-width: 767px) {
+    .template-container {
       padding: 15px 20px;
       max-width: 210mm;
       height: auto;
     }
 
-    @media screen and (min-device-width: 768px) {
+    .template-header {
+      text-align: center;
+      img {
+        margin-top: 30px;
+        width: 70%;
+      }
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    .template-footer {
+      position: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .template-container {
       padding: 35px 70px;
       max-width: 210mm;
       height: 297mm;
     }
 
+    .template-header {
+      text-align: right;
+      img {
+        width: 30%;
+      }
+    }
+
+    .main-content {
+      width: 90%;
+    }
+
+    .template-footer {
+      position: absolute;
+      bottom: 50px;
+    }
+  }
+
+  .template-container {
     display: block;
     position: relative;
     background-color: white;
@@ -28,23 +64,6 @@ const Container = styled.div`
 
     margin: auto;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-
-  .template-header {
-    @media screen and (max-device-width: 767px) {
-      text-align: center;
-      img {
-        margin-top: 30px;
-        width: 70%;
-      }
-    }
-
-    @media screen and (min-device-width: 768px) {
-      text-align: right;
-      img {
-        width: 30%;
-      }
-    }
   }
 
   .recipient-table {
@@ -57,14 +76,6 @@ const Container = styled.div`
   }
 
   .main-content {
-    @media screen and (max-device-width: 767px) {
-      width: 100%;
-    }
-
-    @media screen and (min-device-width: 768px) {
-      width: 90%;
-    }
-
     word-spacing: 1px;
     margin-top: 38px;
 
@@ -97,15 +108,6 @@ const Container = styled.div`
   }
 
   .template-footer {
-    @media screen and (max-device-width: 767px) {
-      position: block;
-    }
-
-    @media screen and (min-device-width: 768px) {
-      position: absolute;
-      bottom: 50px;
-    }
-
     font-size: 8pt;
     line-height: 9.65pt;
     letter-spacing: 1px;
