@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { GeekOutCertificateInterface } from "./types";
+import { GeekOutCertificateInterface, DocumentType } from "./types";
 import championBackground from "./image/Champion.png";
 import runnerUpBackground from "./image/RunnerUp.png";
 import completionBackground from "./image/Completion.png";
@@ -79,8 +79,7 @@ const Container = styled.div`
   }
 `;
 
-type documentType = "champion" | "runner-up" | "completion";
-const getBackgroundImage = (documentType: documentType): any => {
+const getBackgroundImage = (documentType: DocumentType): any => {
   switch (documentType) {
     case "champion":
       return championBackground;
