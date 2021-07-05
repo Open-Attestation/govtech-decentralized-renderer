@@ -2,7 +2,7 @@ import { TemplateWithComponent } from "@govtechsg/decentralized-renderer-react-c
 import { GeekOut2021 } from "./geekOut2021";
 import { GeekOutCertificateInterface } from "./types";
 
-export const geekOut2020Template: TemplateWithComponent<GeekOutCertificateInterface>[] = [
+export const geekOut2021Template: TemplateWithComponent<GeekOutCertificateInterface>[] = [
   {
     id: "GEEK_OUT_2021",
     label: "Certificate",
