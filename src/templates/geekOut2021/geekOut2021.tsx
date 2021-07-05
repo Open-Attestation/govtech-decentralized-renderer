@@ -24,7 +24,7 @@ const Container = styled.div`
     overflow: hidden;
   }
 
-  #backgroundImage {
+  #background-image {
     position: absolute;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ const Container = styled.div`
     width: 100%;
   }
 
-  #titledRecipientDetail {
+  #titled-recipient-detail {
     position: absolute;
     z-index: 1;
     top: 217px;
@@ -56,7 +56,7 @@ const Container = styled.div`
     }
   }
 
-  #completionRecipientDetail {
+  #completion-recipient-detail {
     position: absolute;
     z-index: 1;
     top: 198px;
@@ -79,7 +79,8 @@ const Container = styled.div`
   }
 `;
 
-const getBackgroundImage = (documentType: string): any => {
+type documentType = "champion" | "runner-up" | "completion";
+const getBackgroundImage = (documentType: documentType): any => {
   switch (documentType) {
     case "champion":
       return championBackground;
@@ -103,13 +104,13 @@ export const GeekOut2021: FunctionComponent<TemplateProps<GeekOutCertificateInte
         `}
       />
       <Container id="geekout-cert">
-        <div id="backgroundImage" style={{ backgroundImage: `url(${backgroundImage})` }} />
+        <div id="background-image" style={{ backgroundImage: `url(${backgroundImage})` }} />
         {document.type == "champion" || document.type == "runner-up" ? (
-          <div id="titledRecipientDetail">
+          <div id="titled-recipient-detail">
             <p>{document.recipient.name}</p>
           </div>
         ) : (
-          <div id="completionRecipientDetail">
+          <div id="completion-recipient-detail">
             <p>{document.recipient.name}</p>
           </div>
         )}
