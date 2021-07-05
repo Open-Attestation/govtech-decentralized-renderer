@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { GeekOutCertificateInterface } from "./types";
-import championBackground from "./image/Champion.svg";
-import runnerUpBackground from "./image/RunnerUp.svg";
-import completionBackground from "./image/Completion.svg";
+import championBackground from "./image/Champion.png";
+import runnerUpBackground from "./image/RunnerUp.png";
+import completionBackground from "./image/Completion.png";
 import styled from "@emotion/styled";
 import { css, Global } from "@emotion/core";
 import "./font/font.css";
@@ -28,6 +28,7 @@ const Container = styled.div`
     position: absolute;
     background-position: bottom;
     background-repeat: no-repeat;
+    background-size: cover;
     bottom: 0px;
     height: 100%;
     width: 100%;
@@ -49,6 +50,8 @@ const Container = styled.div`
       text-align: right;
       font-size: 35pt;
       font-family: "lucida-sans";
+      font-weight: 600;
+      font-style: italic;
       color: #4b5054;
     }
   }
@@ -69,6 +72,8 @@ const Container = styled.div`
       text-align: right;
       font-size: 31pt;
       font-family: "lucida-sans";
+      font-weight: 600;
+      font-style: italic;
       color: #4b5054;
     }
   }
