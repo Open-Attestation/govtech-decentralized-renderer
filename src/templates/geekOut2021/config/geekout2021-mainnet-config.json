@@ -44,7 +44,6 @@
           }
         }
       },
-      "headers": ["recipient.name", "type"],
       "extension": "oc"
     }
   ]
