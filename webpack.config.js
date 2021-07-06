@@ -29,10 +29,18 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot)$/i,
         use: [
           {
             loader: "file-loader"
+          }
+        ]
+      },
+      {
+        test: /\.(css)$/i,
+        use: [
+          {
+            loader: "css-loader"
           }
         ]
       }
