@@ -34,7 +34,7 @@ const Container = styled.div`
     width: 100%;
   }
 
-  #titled-recipient-detail {
+  #recipient-detail {
     position: absolute;
     z-index: 1;
     top: 217px;
@@ -49,28 +49,6 @@ const Container = styled.div`
       margin: 0px;
       text-align: right;
       font-size: 35pt;
-      font-family: "lucida-sans";
-      font-weight: 600;
-      font-style: italic;
-      color: #4b5054;
-    }
-  }
-
-  #completion-recipient-detail {
-    position: absolute;
-    z-index: 1;
-    top: 198px;
-    left: 555px;
-    width: 494px;
-    height: 160px;
-
-    p {
-      position: absolute;
-      width: 100%;
-      bottom: 0px;
-      margin: 0px;
-      text-align: right;
-      font-size: 31pt;
       font-family: "lucida-sans";
       font-weight: 600;
       font-style: italic;
@@ -104,15 +82,9 @@ export const GeekOut2021: FunctionComponent<TemplateProps<GeekOutCertificateInte
       />
       <Container id="geekout-cert">
         <div id="background-image" style={{ backgroundImage: `url(${backgroundImage})` }} />
-        {document.type == "champion" || document.type == "runner-up" ? (
-          <div id="titled-recipient-detail">
-            <p>{document.recipient.name}</p>
-          </div>
-        ) : (
-          <div id="completion-recipient-detail">
-            <p>{document.recipient.name}</p>
-          </div>
-        )}
+        <div id="recipient-detail">
+          <p>{document.recipient.name}</p>
+        </div>
       </Container>
     </>
   );
