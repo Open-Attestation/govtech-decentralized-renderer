@@ -22,9 +22,9 @@
           }
         ],
         "recipient": {
-          "name": "[Recipient Full Name]"
+          "name": "Recipient Full Name"
         },
-        "type": "[(champion / runner-up / completion)]"
+        "type": "(champion / runner-up / completion)"
       },
       "schema": {
         "type": "object",
@@ -40,11 +40,11 @@
           },
           "type": {
             "type": "string",
-            "title": "Certificate Type"
+            "enum": ["champion", "runner-up", "completion"]
           }
         }
       },
-      "extension": "opencert"
+      "extension": "oc"
     }
   ]
 }
