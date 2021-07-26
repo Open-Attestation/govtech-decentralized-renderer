@@ -1,5 +1,5 @@
 {
-  "network": "homestead",
+  "network": "ropsten",
   "wallet": "<wallet address>",
   "forms": [
     {
@@ -14,7 +14,7 @@
         "issuers": [
           {
             "name": "GovTech Singapore",
-            "documentStore": "0x6972154AdA6c67e38A2e1cd5C68949086c2C2068",
+            "documentStore": "0x6972154AdA6c67e38A2e1cd5C68949086c2C206",
             "identityProof": {
               "type": "DNS-TXT",
               "location": "hr.tech.gov.sg"
@@ -44,7 +44,8 @@
           }
         }
       },
-      "extension": "oc"
+      "extension": "opencert",
+      "fileName":"<%= recipient.name %>-<%= type %>"
     }
   ]
 }
