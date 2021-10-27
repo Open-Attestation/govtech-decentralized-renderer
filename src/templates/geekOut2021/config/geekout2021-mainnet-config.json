@@ -1,6 +1,9 @@
 {
   "network": "homestead",
-  "wallet": "<wallet address>",
+  "wallet": {
+    "type": "ENCRYPTED_JSON",
+    "encryptedJson": "<WALLET_ADDRESS_STRING>"
+  },
   "forms": [
     {
       "name": "GeekOut Certificate 2021",
@@ -20,11 +23,7 @@
               "location": "hr.tech.gov.sg"
             }
           }
-        ],
-        "recipient": {
-          "name": "[Recipient Full Name]"
-        },
-        "type": "[(champion / runner-up / completion)]"
+        ]
       },
       "schema": {
         "type": "object",
@@ -40,11 +39,29 @@
           },
           "type": {
             "type": "string",
-            "title": "Certificate Type"
+            "title": "Type",
+            "anyOf": [
+              {
+                "type": "string",
+                "title": "Champion",
+                "enum": ["champion"]
+              },
+              {
+                "type": "string",
+                "title": "Runner Up",
+                "enum": ["runner-up"]
+              },
+              {
+                "type": "string",
+                "title": "Completion",
+                "enum": ["completion"]
+              }
+            ]
           }
         }
       },
-      "extension": "opencert"
+      "extension": "opencert",
+      "fileName": "<%= recipient.name %>-<%= type %>"
     }
   ]
 }
