@@ -2,7 +2,9 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { format } from "date-fns";
 import { GeekOutCertificateTemplateV2, DocumentType } from "./types";
+import championBackground from "./image/champion.png";
 import completionBackground from "./image/completion.png";
+import runnerUpBackground from "./image/runnerUp.png";
 import { css, Global } from "@emotion/core";
 import styled from "@emotion/styled";
 
@@ -96,10 +98,10 @@ const Container = styled.div`
 
 const getBackgroundImage = (documentType: DocumentType): any => {
   switch (documentType) {
-    // case "champion":
-    //   return championBackground;
-    // case "runner-up":
-    //   return runnerUpBackground;
+    case "champion":
+      return championBackground;
+    case "runner-up":
+      return runnerUpBackground;
     case "completion":
       return completionBackground;
   }

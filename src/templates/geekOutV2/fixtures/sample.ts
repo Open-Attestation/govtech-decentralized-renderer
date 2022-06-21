@@ -2,7 +2,7 @@ import { v2 } from "@govtechsg/decentralized-renderer-react-components";
 import { GeekOutCertificateTemplateV2 } from "../types";
 
 export const championSampleCertificate: GeekOutCertificateTemplateV2 = {
-  message: "For successfully completing GeekOut 2022!",
+  message: "Great job on your outstanding performance!",
   recipient: {
     name: "Vaithiyanathan Sri Kesava Raman"
   },
@@ -31,6 +31,14 @@ export const championSampleCertificate: GeekOutCertificateTemplateV2 = {
   }
 };
 
-export const runnerupSampleCertificate = { ...championSampleCertificate, type: "runner-up" };
+export const runnerupSampleCertificate = {
+  ...championSampleCertificate,
+  type: "runner-up",
+  message: "Great job on your outstanding performance!"
+};
 
-export const completionSampleCertificate = { ...championSampleCertificate, type: "completion" };
+export const completionSampleCertificate = {
+  ...championSampleCertificate,
+  type: "completion",
+  message: "For successfully completing GeekOut 2022!"
+};
