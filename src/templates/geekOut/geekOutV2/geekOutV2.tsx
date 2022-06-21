@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { format } from "date-fns";
-import { GeekOutCertificateTemplateV2, DocumentType } from "./types";
-import championBackground from "./image/champion.png";
-import completionBackground from "./image/completion.png";
-import runnerUpBackground from "./image/runnerUp.png";
+import { GeekOutCertificateTemplateV2 } from "./types";
 import { css, Global } from "@emotion/core";
 import styled from "@emotion/styled";
+import { getBackgroundImage } from "../utils";
 
 const Container = styled.div`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -96,17 +94,6 @@ const Container = styled.div`
   }
 `;
 
-const getBackgroundImage = (documentType: DocumentType): any => {
-  switch (documentType) {
-    case "champion":
-      return championBackground;
-    case "runner-up":
-      return runnerUpBackground;
-    case "completion":
-      return completionBackground;
-  }
-};
-
 const processInputDate = (input: string): string => {
   try {
     return format(new Date(input), "d MMM yyyy");
@@ -117,14 +104,14 @@ const processInputDate = (input: string): string => {
 };
 
 export const GeekOutV2: FunctionComponent<TemplateProps<GeekOutCertificateTemplateV2>> = ({ document }) => {
-  const backgroundImage = getBackgroundImage(document.type);
+  const backgroundImage = getBackgroundImage(document.type, true);
   return (
     <>
       <Global
         styles={css`
           html,
           body {
-            margin: 0px;
+            margin: 0;
           }
         `}
       />
