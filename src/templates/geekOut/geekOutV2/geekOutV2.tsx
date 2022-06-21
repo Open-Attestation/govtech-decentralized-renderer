@@ -9,7 +9,7 @@ import { getBackgroundImage } from "../utils";
 const Container = styled.div`
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   width: 297mm;
-  height: 209.9mm;
+  height: 210mm;
   position: relative;
   margin: 0 auto;
   margin-bottom: 0.5cm;
