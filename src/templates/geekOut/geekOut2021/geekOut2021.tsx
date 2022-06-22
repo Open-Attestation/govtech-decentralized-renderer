@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { GeekOutCertificateInterface, DocumentType } from "./types";
-import championBackground from "./image/Champion.png";
-import runnerUpBackground from "./image/RunnerUp.png";
-import completionBackground from "./image/Completion.png";
+import { GeekOutCertificateInterface } from "./types";
 import styled from "@emotion/styled";
 import { css, Global } from "@emotion/core";
 import "./font/font.css";
+import { getBackgroundImage } from "../utils";
 
 const Container = styled.div`
   background: white;
@@ -57,19 +55,8 @@ const Container = styled.div`
   }
 `;
 
-const getBackgroundImage = (documentType: DocumentType): any => {
-  switch (documentType) {
-    case "champion":
-      return championBackground;
-    case "runner-up":
-      return runnerUpBackground;
-    case "completion":
-      return completionBackground;
-  }
-};
-
 export const GeekOut2021: FunctionComponent<TemplateProps<GeekOutCertificateInterface>> = ({ document }) => {
-  const backgroundImage = getBackgroundImage(document.type);
+  const backgroundImage = getBackgroundImage(document.type, false);
   return (
     <>
       <Global

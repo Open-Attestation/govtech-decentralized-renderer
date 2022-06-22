@@ -1,7 +1,7 @@
 import { App } from "./app";
 import { sampleCertificate as certificateOfAchievement } from "../src/templates/certificateOfAchievement/fixtures/sample";
-import { sampleCertificate as geekOut2020 } from "../src/templates/geekOut2020/fixtures/sample";
-import { championSampleCertificate as geekOut2021 } from "../src/templates/geekOut2021/fixtures/sample";
+import { sampleCertificate as geekOut2020 } from "../src/templates/geekOut/geekOut2020/fixtures/sample";
+import { championSampleCertificate as geekOut2021 } from "../src/templates/geekOut/geekOut2021/fixtures/sample";
 import { CovidLetterOfAppreciationSampleData as covidLetterOfAppreciation } from "../src/templates/covidAppreciationLetter/fixtures/sample";
 
 import { fireEvent, render } from "@testing-library/react";

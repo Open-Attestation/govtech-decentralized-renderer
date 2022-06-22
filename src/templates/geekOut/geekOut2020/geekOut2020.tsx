@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { format } from "date-fns";
 import { GeekOutCertificateTemplate } from "./types";
-import certificateBase from "../../core/geekout-certificate-base.png";
+import certificateBase from "../../../core/geekout-certificate-base.png";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
