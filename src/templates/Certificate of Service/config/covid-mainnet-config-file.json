@@ -1,0 +1,56 @@
+{
+  "network": "homestead",
+  "wallet": "<wallet address>",
+  "forms": [
+    {
+      "name": "Certificate of Service",
+      "type": "VERIFIABLE_DOCUMENT",
+      "defaults": {
+        "$template": {
+          "type": "EMBEDDED_RENDERER",
+          "name": "CERTIFICATE_OF_SERVICE",
+          "url": "https://govtech-renderer.openattestation.com/"
+        },
+        "issuers": [
+          {
+            "name": "MINDEF Singapore",
+            "documentStore": "0x6972154AdA6c67e38A2e1cd5C68949086c2C2068",
+            "identityProof": {
+              "type": "DNS-TXT",
+              "location": "hr.tech.gov.sg"
+            }
+          }
+        ],
+        "recipient": {
+          "name": "[Employee Full Name]",
+          "rank": "[Employee Rank]"
+        },
+        "issuedOn": "[Date]"
+      },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Employee's Fullname"
+              },
+              
+              "rank": {
+                "type": "string",
+                "title": "Rank"
+              }
+            }
+          },
+          "issuedOn": {
+            "type": "string",
+            "title": "Date"
+          }
+        }
+      },
+      "headers": ["recipient.name", "recipient.rank", "issuedOn"]
+    }
+  ]
+}
