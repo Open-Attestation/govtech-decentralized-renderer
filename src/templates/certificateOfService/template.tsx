@@ -69,7 +69,7 @@ const Container = styled.div`
     margin: 0;
   }
 `;
-export const CertificateofServiceTemplate: FunctionComponent<TemplateProps<CertificateofServiceInterface> & {
+export const CertificateOfServiceTemplate: FunctionComponent<TemplateProps<CertificateofServiceInterface> & {
   className?: string;
 }> = ({ document }) => {
   const recipientName = document.recipient.name;
