@@ -1,9 +1,9 @@
-import { CertificateofServiceTemplate } from "./template";
+import { CertificateOfServiceTemplate } from "./template";
 
-export const certificateofServiceTemplate = [
+export const certificateOfServiceTemplate = [
   {
     id: "CERTIFICATE_OF_SERVICE",
     label: "Certificate of Service",
-    template: CertificateofServiceTemplate
+    template: CertificateOfServiceTemplate
   }
 ];

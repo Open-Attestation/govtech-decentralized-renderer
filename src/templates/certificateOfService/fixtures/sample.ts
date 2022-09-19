@@ -1,7 +1,7 @@
 import { v2 } from "@govtechsg/decentralized-renderer-react-components";
 import { CertificateofServiceInterface } from "../types";
 
-export const CertificateofServiceSampleData: CertificateofServiceInterface = {
+export const CertificateOfServiceSampleData: CertificateofServiceInterface = {
   recipient: {
     name: "Tan Chen Chen",
     rank: "3G"
@@ -13,7 +13,7 @@ export const CertificateofServiceSampleData: CertificateofServiceInterface = {
   ],
   issuedOn: "01 October 2022",
   $template: {
-    name: "Certificate of Service",
+    name: "CERTIFICATE_OF_SERVICE",
     type: v2.TemplateType.EmbeddedRenderer,
     url: "http://localhost:3000"
   }
