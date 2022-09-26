@@ -67,6 +67,7 @@ const Container = styled.div`
       width: 200mm;
       height: 282mm;
       font-size: 19pt;
+      padding: 100mm 20mm;
     }
     .certify-line {
       margin-top: 14mm;
