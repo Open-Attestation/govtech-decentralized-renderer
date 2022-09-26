@@ -12,7 +12,7 @@ const Container = styled.div`
 
     max-width: 210mm;
     max-height: 297mm;
-    width: 100vw;
+    width: 100%;
     height: 141vw;
     margin: auto;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ const Container = styled.div`
 
     font-family: "Times New Roman", Times, serif;
     color: black;
-    font-size: clamp(3pt, 3.33vw, 20pt);
+    font-size: clamp(1pt, 3.33vw, 20pt);
   }
 
   .background {
@@ -39,16 +39,16 @@ const Container = styled.div`
   }
 
   .certify-line {
-    margin-top: clamp(5mm, 7.1vw, 15mm);
+    margin-top: clamp(1mm, 7.1vw, 15mm);
   }
 
   .recipient {
-    margin-top: clamp(5mm, 7.1vw, 15mm);
+    margin-top: clamp(1mm, 7.1vw, 15mm);
     font-weight: bold;
   }
 
   .award-line {
-    margin-top: clamp(5mm, 14.2vw, 30mm);
+    margin-top: clamp(1mm, 14.2vw, 30mm);
   }
 
   .signature-date {
