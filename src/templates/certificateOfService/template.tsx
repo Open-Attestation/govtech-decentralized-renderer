@@ -9,17 +9,20 @@ const Container = styled.div`
     display: block;
     position: relative;
     background-size: contain;
-    width: 210mm;
-    height: 297mm;
+
+    max-width: 210mm;
+    max-height: 297mm;
+    width: 100%;
+    height: 141vw;
     margin: auto;
     box-sizing: border-box;
     border: 1px solid #444;
-    padding: 10cm 2cm;
+    padding: clamp(1mm, 45vw, 100mm) clamp(5mm, 9.52vw, 20mm);
     text-align: center;
 
     font-family: "Times New Roman", Times, serif;
     color: black;
-    font-size: 20pt;
+    font-size: clamp(1pt, 3.33vw, 20pt);
   }
 
   .background {
@@ -28,7 +31,6 @@ const Container = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
   }
 
   .certify-line,
@@ -37,22 +39,22 @@ const Container = styled.div`
   }
 
   .certify-line {
-    margin-top: 1.5cm;
+    margin-top: clamp(1mm, 7.1vw, 15mm);
   }
 
   .recipient {
-    margin-top: 1.5cm;
+    margin-top: clamp(1mm, 7.1vw, 15mm);
     font-weight: bold;
   }
 
   .award-line {
-    margin-top: 3cm;
+    margin-top: clamp(1mm, 14.2vw, 30mm);
   }
 
   .signature-date {
-    margin-top: 5cm;
-    margin-left: 1cm;
-    font-size: 12pt;
+    margin-top: clamp(1mm, 23.8vw, 50mm);
+    margin-left: clamp(1mm, 4.8vw, 10mm);
+    font-size: clamp(1pt, 2vw, 12pt);
     font-weight: bold;
     position: absolute;
   }
@@ -62,6 +64,24 @@ const Container = styled.div`
       box-shadow: none;
       margin: 0;
       border: none;
+      width: 200mm;
+      height: 282mm;
+      font-size: 19pt;
+    }
+    .certify-line {
+      margin-top: 14mm;
+    }
+    .recipient {
+      margin-top: 14mm;
+    }
+
+    .award-line {
+      margin-top: 29mm;
+    }
+    .signature-date {
+      margin-top: 47mm;
+      margin-left: 9mm;
+      font-size: 11pt;
     }
   }
 
