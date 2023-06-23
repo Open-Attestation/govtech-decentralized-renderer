@@ -18,7 +18,6 @@ export const getBackgroundImage = (documentType: DocumentType, isV2: boolean): a
       return isV2 ? runnerUpBackgroundV2 : runnerUpBackground;
     case "completion":
       return isV2 ? completionBackgroundV2 : completionBackground;
-    // 2023 Positions
     case "first":
       return firstPlaceBackground;
     case "second":
