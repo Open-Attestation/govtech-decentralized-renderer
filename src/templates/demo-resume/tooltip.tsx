@@ -27,14 +27,14 @@ interface IconProps {
 }
 
 export const TooltipIcon: FunctionComponent<IconProps> = ({ type, noPopup = false, customStyle = {} }) => {
-  const [cansee, setCansee] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div style={{ position: "relative", display: "flex", alignItems: "center", ...customStyle }}>
       <img
         src={ICON_MAP[type]}
         style={{ position: "relative" }}
-        onMouseEnter={() => setCansee(noPopup ? false : true)}
-        onMouseLeave={() => setCansee(false)}
+        onMouseEnter={() => setIsVisible(noPopup ? false : true)}
+        onMouseLeave={() => setIsVisible(false)}
       />
       <div
         style={{
@@ -47,7 +47,7 @@ export const TooltipIcon: FunctionComponent<IconProps> = ({ type, noPopup = fals
           bottom: "165%",
           left: "50%",
           transform: "translate(-50%, 0)",
-          visibility: `${cansee ? "visible" : "hidden"}`
+          visibility: isVisible ? "visible" : "hidden"
         }}
       >
         <div

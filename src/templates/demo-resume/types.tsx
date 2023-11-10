@@ -32,6 +32,16 @@ export interface Resume extends v2.OpenAttestationDocument {
 }
 
 export const sampleResume: Resume = {
+  issuers: [
+    {
+      name: "Sample Resume"
+    }
+  ],
+  $template: {
+    name: "RESUME_DEMO",
+    type: v2.TemplateType.EmbeddedRenderer,
+    url: "http://localhost:3010/"
+  },
   name: "Tan Yi Ling Freya",
   mobileNumber: "9823 1234",
   email: "freya_tan@gmail.com",
