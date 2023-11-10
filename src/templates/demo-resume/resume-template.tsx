@@ -5,7 +5,7 @@ import { Detail, Divider, Ellipse, Grid, Name, Page, Row, Section } from "./styl
 import { SimplePrivacyFilterBanner } from "./privacy-banner";
 import { TOOLTIP_TEXT, TooltipIcon } from "./tooltip";
 
-const downloadJSON = (resume: any) => {
+const downloadJSON = (resume: any): void => {
   const jsonData = JSON.stringify(resume, null, 2);
   const blob = new Blob([jsonData], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -66,7 +66,13 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
                           }
                         />
                         {value.type.map((type, typeIndex) => {
-                          return <TooltipIcon type={type} customStyle={{ marginLeft: "5px" }} />;
+                          return (
+                            <TooltipIcon
+                              key={`${value.name}${typeIndex}`}
+                              type={type}
+                              customStyle={{ marginLeft: "5px" }}
+                            />
+                          );
                         })}
                       </Row>
                     )}
@@ -82,7 +88,7 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
           <Section>Education</Section>
           <Divider />
         </Row>
-        {document.education.map((entry, i) => {
+        {document.education.map(entry => {
           return (
             <>
               <Row style={{ marginTop: "15px" }}>
@@ -101,7 +107,7 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
           <Section style={{ whiteSpace: "nowrap" }}>Work History</Section>
           <Divider />
         </Row>
-        {document.work.map((work, i) => {
+        {document.work.map(work => {
           return (
             <>
               <Row style={{ marginTop: "15px", gap: "5px" }}>
