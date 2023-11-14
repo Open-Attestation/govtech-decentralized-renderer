@@ -17,7 +17,7 @@ export const TOOLTIP_TEXT = {
     description: "Data from SkillsFuture accredited courses or Singapore Government systems"
   },
   DEMONSTRATED: { title: "Demonstrated", description: "Data endorsed by co-worker" },
-  DECLARED: { title: "Declared", description: "Data entered by individual" }
+  DECLARED: { title: "Self-declared", description: "Data entered by individual" }
 };
 
 interface IconProps {
