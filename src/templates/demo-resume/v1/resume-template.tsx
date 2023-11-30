@@ -1,9 +1,9 @@
 import { ObfuscatableValue, TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { Resume } from "./types";
 import React, { FunctionComponent, useState } from "react";
-import { Detail, Divider, Ellipse, Grid, Name, Page, Row, Section } from "./styled-components";
-import { SimplePrivacyFilterBanner } from "./privacy-banner";
-import { TOOLTIP_TEXT, TooltipIcon } from "./tooltip";
+import { Detail, Divider, Ellipse, Grid, Name, Page, Row, Section } from "../styled-components";
+import { SimplePrivacyFilterBanner } from "../privacy-banner";
+import { TOOLTIP_TEXT, TooltipIcon } from "../tooltip";
 
 const downloadJSON = (resume: any): void => {
   const jsonData = JSON.stringify(resume, null, 2);

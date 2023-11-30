@@ -1,4 +1,4 @@
-import { VERIFICATION_TYPE } from "./types";
+import { VERIFICATION_TYPE } from "./v1/types";
 import verifiedIcon from "./images/verified_icon.svg";
 import demonstratedIcon from "./images/demonstrated_icon.svg";
 import declaredIcon from "./images/declared_icon.svg";
