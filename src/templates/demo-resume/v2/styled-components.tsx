@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import "./font/font.css";
 
 export const mediaQueries: Record<string, string> = {
   sm: `@media (min-width: ${640}px)`,
@@ -11,6 +10,7 @@ export const mediaQueries: Record<string, string> = {
 };
 
 export const Page = styled.div`
+  background-color: #ffffff;
   margin: auto;
   border: 1px solid #6b7280;
   box-sizing: border-box;
@@ -31,70 +31,60 @@ export const Page = styled.div`
   }
 `;
 
-export const Name = styled.div`
-  color: var(--off-black, #252525);
-  text-align: left;
-  font-family: PT Serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
-`;
-
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 `;
 
 export const Detail = styled.div<{ bold?: boolean }>`
-  color: var(--off-black, #252525);
-  font-family: PT Serif;
-  font-size: 16px;
+  color: #4a5054;
+  font-family: "Work Sans";
+  font-size: 14px;
   font-style: normal;
   font-weight: ${props => (props.bold ? "700" : "400")};
-  line-height: 150%;
-`;
-
-export const Ellipse = styled.div`
-  width: 6px;
-  height: 6px;
-  background-color: #252525;
-  border-radius: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
+  line-height: 20px;
 `;
 
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #252525;
+  background-color: #ededed;
 `;
 
 export const Section = styled.div`
-  color: var(--off-black, #252525);
-  text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-
-  font-family: PT Serif;
+  color: #1d2225;
+  text-align: left;
+  font-family: Work Sans;
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
+  font-weight: 600;
+  line-height: 120%;
+  padding-bottom: 10px;
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  grid-template-columns: 5fr 4fr;
 `;
 
 export const Title = styled.div`
   color: #1d2225;
   text-align: left;
   font-family: Work Sans;
+  font-weight: 600;
   font-size: 40px;
   font-style: normal;
+  line-height: 130%;
+`;
+
+export const LegendBox = styled.div`
+  display: flex;
+  padding: 12px 16px;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 8px;
+  border: 1px solid #3972d5;
+  background: #f4f7fa;
 `;

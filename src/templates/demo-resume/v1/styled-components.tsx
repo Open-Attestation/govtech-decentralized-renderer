@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import "./font/font.css";
 
 export const mediaQueries: Record<string, string> = {
   sm: `@media (min-width: ${640}px)`,
@@ -11,6 +10,7 @@ export const mediaQueries: Record<string, string> = {
 };
 
 export const Page = styled.div`
+  background-color: #ffffff;
   margin: auto;
   border: 1px solid #6b7280;
   box-sizing: border-box;
