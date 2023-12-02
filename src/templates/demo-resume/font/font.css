@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "PT Serif", serif;
+    font-style: regular;
+    src: url("PTSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Work Sans", sans-serif;
+    font-style: regular;
+    src: url("WorkSans-Regular.ttf");
+}
