@@ -1,37 +1,21 @@
 import { VERIFICATION_TYPE } from "./v1/types";
-import verifiedIcon from "./images/verified_icon.svg";
-import demonstratedIcon from "./images/demonstrated_icon.svg";
-import declaredIcon from "./images/declared_icon.svg";
-import tooltipArrow from "./images/tooltip_arrow.svg";
+
+import tooltipArrow from "./v1/images/tooltip_arrow.svg";
 import React, { FunctionComponent, useState } from "react";
 
-const ICON_MAP = {
-  VERIFIED: verifiedIcon,
-  DEMONSTRATED: demonstratedIcon,
-  DECLARED: declaredIcon
-};
-
-export const TOOLTIP_TEXT = {
-  VERIFIED: {
-    title: "Verified",
-    description: "Data from SkillsFuture accredited courses or Singapore Government systems"
-  },
-  DEMONSTRATED: { title: "Demonstrated", description: "Data endorsed by co-worker" },
-  DECLARED: { title: "Self-declared", description: "Data entered by individual" }
-};
-
 interface IconProps {
-  type: VERIFICATION_TYPE;
+  text: { title: string; description: string };
   noPopup?: boolean;
   customStyle?: React.CSSProperties;
+  image: any;
 }
 
-export const TooltipIcon: FunctionComponent<IconProps> = ({ type, noPopup = false, customStyle = {} }) => {
+export const TooltipIcon: FunctionComponent<IconProps> = ({ text, noPopup = false, customStyle = {}, image }) => {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <div style={{ position: "relative", display: "flex", alignItems: "center", ...customStyle }}>
       <img
-        src={ICON_MAP[type]}
+        src={image}
         style={{ position: "relative" }}
         onMouseEnter={() => setIsVisible(noPopup ? false : true)}
         onMouseLeave={() => setIsVisible(false)}
@@ -61,7 +45,7 @@ export const TooltipIcon: FunctionComponent<IconProps> = ({ type, noPopup = fals
             marginBottom: "10px"
           }}
         >
-          {TOOLTIP_TEXT[type].title}
+          {text.title}
         </div>
         <div
           style={{
@@ -73,7 +57,7 @@ export const TooltipIcon: FunctionComponent<IconProps> = ({ type, noPopup = fals
             lineHeight: "150%"
           }}
         >
-          {TOOLTIP_TEXT[type].description}
+          {text.description}
         </div>
         <img
           src={tooltipArrow}

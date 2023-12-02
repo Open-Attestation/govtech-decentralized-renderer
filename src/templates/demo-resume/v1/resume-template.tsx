@@ -1,9 +1,27 @@
 import { ObfuscatableValue, TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
 import { Resume } from "./types";
 import React, { FunctionComponent, useState } from "react";
-import { Detail, Divider, Ellipse, Grid, Name, Page, Row, Section } from "../styled-components";
+import { Detail, Divider, Ellipse, Grid, Name, Page, Row, Section } from "./styled-components";
 import { SimplePrivacyFilterBanner } from "../privacy-banner";
-import { TOOLTIP_TEXT, TooltipIcon } from "../tooltip";
+import { TooltipIcon } from "../tooltip";
+import verifiedIcon from "./images/verified_icon.svg";
+import demonstratedIcon from "./images/demonstrated_icon.svg";
+import declaredIcon from "./images/declared_icon.svg";
+
+const ICON_MAP = {
+  VERIFIED: verifiedIcon,
+  DEMONSTRATED: demonstratedIcon,
+  DECLARED: declaredIcon
+};
+
+export const TOOLTIP_TEXT = {
+  VERIFIED: {
+    title: "Verified",
+    description: "Data from SkillsFuture accredited courses or Singapore Government systems"
+  },
+  DEMONSTRATED: { title: "Demonstrated", description: "Data endorsed by co-worker" },
+  DECLARED: { title: "Self-declared", description: "Data entered by individual" }
+};
 
 const downloadJSON = (resume: any): void => {
   const jsonData = JSON.stringify(resume, null, 2);
@@ -69,8 +87,9 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
                           return (
                             <TooltipIcon
                               key={`${value.name}${typeIndex}`}
-                              type={type}
+                              text={TOOLTIP_TEXT[type]}
                               customStyle={{ marginLeft: "5px" }}
+                              image={ICON_MAP[type]}
                             />
                           );
                         })}
@@ -93,7 +112,11 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
             <>
               <Row style={{ marginTop: "15px" }}>
                 <Detail bold>{entry.name}</Detail>
-                <TooltipIcon type={entry.type[0]} customStyle={{ marginLeft: "5px" }} />
+                <TooltipIcon
+                  text={TOOLTIP_TEXT[entry.type[0]]}
+                  customStyle={{ marginLeft: "5px" }}
+                  image={ICON_MAP[entry.type[0]]}
+                />
               </Row>
               <Detail>
                 {entry.institution}, {entry.startDate}-{entry.endDate}
@@ -115,11 +138,19 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
                 <Detail>
                   {work.startDate}-{work.endDate}
                 </Detail>
-                <TooltipIcon type={work.companyType[0]} customStyle={{ marginLeft: "5px" }} />
+                <TooltipIcon
+                  text={TOOLTIP_TEXT[work.companyType[0]]}
+                  customStyle={{ marginLeft: "5px" }}
+                  image={ICON_MAP[work.companyType[0]]}
+                />
               </Row>
               <Row>
                 <Detail>{work.role}</Detail>
-                <TooltipIcon type={work.roleType[0]} customStyle={{ marginLeft: "5px" }} />
+                <TooltipIcon
+                  text={TOOLTIP_TEXT[work.roleType[0]]}
+                  customStyle={{ marginLeft: "5px" }}
+                  image={ICON_MAP[work.roleType[0]]}
+                />
               </Row>
             </>
           );
@@ -145,19 +176,19 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
           Legend
         </div>
         <Row style={{ marginTop: "5px" }}>
-          <TooltipIcon type="VERIFIED" noPopup={true} />
+          <TooltipIcon text={TOOLTIP_TEXT["VERIFIED"]} noPopup={true} image={ICON_MAP["VERIFIED"]} />
           <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
             Verified: {TOOLTIP_TEXT.VERIFIED.description}
           </div>
         </Row>
         <Row style={{ marginTop: "5px" }}>
-          <TooltipIcon type="DEMONSTRATED" noPopup={true} />
+          <TooltipIcon text={TOOLTIP_TEXT["DEMONSTRATED"]} noPopup={true} image={ICON_MAP["DEMONSTRATED"]} />
           <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
             Demonstrated: Data endorsed by co-worker
           </div>
         </Row>
         <Row style={{ marginTop: "5px" }}>
-          <TooltipIcon type="DECLARED" noPopup={true} />
+          <TooltipIcon text={TOOLTIP_TEXT["DECLARED"]} noPopup={true} image={ICON_MAP["DECLARED"]} />
           <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
             Self-declared: Data entered by individual
           </div>
