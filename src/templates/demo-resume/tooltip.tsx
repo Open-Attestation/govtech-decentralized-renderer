@@ -1,5 +1,3 @@
-import { VERIFICATION_TYPE } from "./v1/types";
-
 import tooltipArrow from "./v1/images/tooltip_arrow.svg";
 import React, { FunctionComponent, useState } from "react";
 
