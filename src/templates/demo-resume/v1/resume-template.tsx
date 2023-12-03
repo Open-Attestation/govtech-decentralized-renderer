@@ -166,7 +166,7 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
         />
         <div
           style={{
-            fontFamily: "sans-serif",
+            fontFamily: "Inter",
             fontSize: "14px",
             fontWeight: 600,
             marginBottom: "20px",
@@ -177,19 +177,19 @@ export const ResumeTemplate: FunctionComponent<TemplateProps<Resume>> = ({
         </div>
         <Row style={{ marginTop: "5px" }}>
           <TooltipIcon text={TOOLTIP_TEXT["VERIFIED"]} noPopup={true} image={ICON_MAP["VERIFIED"]} />
-          <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
+          <div style={{ marginLeft: "5px", fontFamily: "Inter", fontSize: "12px" }}>
             Verified: {TOOLTIP_TEXT.VERIFIED.description}
           </div>
         </Row>
         <Row style={{ marginTop: "5px" }}>
           <TooltipIcon text={TOOLTIP_TEXT["DEMONSTRATED"]} noPopup={true} image={ICON_MAP["DEMONSTRATED"]} />
-          <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
+          <div style={{ marginLeft: "5px", fontFamily: "Inter", fontSize: "12px" }}>
             Demonstrated: Data endorsed by co-worker
           </div>
         </Row>
         <Row style={{ marginTop: "5px" }}>
           <TooltipIcon text={TOOLTIP_TEXT["DECLARED"]} noPopup={true} image={ICON_MAP["DECLARED"]} />
-          <div style={{ marginLeft: "5px", fontFamily: "sans-serif", fontSize: "12px" }}>
+          <div style={{ marginLeft: "5px", fontFamily: "Inter", fontSize: "12px" }}>
             Self-declared: Data entered by individual
           </div>
         </Row>
