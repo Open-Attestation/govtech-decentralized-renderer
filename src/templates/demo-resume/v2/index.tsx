@@ -1,9 +1,9 @@
-import { ResumeTemplate } from "./resume-template";
+import { ResumeV2Template } from "./resume-template";
 
 export const resumeV2Template = [
   {
     id: "resume",
     label: "Skill Passport",
-    template: ResumeTemplate
+    template: ResumeV2Template
   }
 ];

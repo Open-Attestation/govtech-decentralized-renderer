@@ -43,7 +43,7 @@ export const Detail = styled.div<{ bold?: boolean }>`
   font-family: "Work Sans";
   font-size: 14px;
   font-style: normal;
-  font-weight: ${props => (props.bold ? "700" : "400")};
+  font-weight: ${props => (props.bold ? "500" : "400")};
   line-height: 20px;
 `;
 
