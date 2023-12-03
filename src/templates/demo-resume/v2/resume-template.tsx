@@ -58,7 +58,7 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
         onDownloadDocument={() => downloadJSON(wrappedDocument)}
       />
       <Page>
-        <img src={skillsFutureLogo}></img>
+        <img src={skillsFutureLogo} />
         <Title>Skill Passport</Title>
         <Divider />
         <Row style={{ paddingTop: "25px", justifyContent: "space-between" }}>
@@ -81,9 +81,9 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
         </Row>
         <Divider />
         <Section style={{ paddingTop: "15px" }}>Work History</Section>
-        {document.work.map(work => {
+        {document.work.map((work, i) => {
           return (
-            <Grid>
+            <Grid key={`work-${i}`}>
               <Row style={{ marginTop: "5px", gap: "5px" }}>
                 <TooltipIcon text={TOOLTIP_TEXT[work.companyType]} image={ICON_MAP[work.companyType]} />
                 <Detail style={{ fontSize: "16px" }} bold>
@@ -105,9 +105,9 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
           );
         })}
         <Section style={{ paddingTop: "30px" }}>Education</Section>
-        {document.education.map(education => {
+        {document.education.map((education, i) => {
           return (
-            <Grid>
+            <Grid key={`edu-${i}`}>
               <Row style={{ marginTop: "5px", gap: "5px" }}>
                 <TooltipIcon
                   text={TOOLTIP_TEXT[education.qualificationType]}
@@ -132,9 +132,9 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
           );
         })}
         <Section style={{ paddingTop: "30px" }}>Profressional Credentials</Section>
-        {document.professionalCredentials.map(credential => {
+        {document.professionalCredentials.map((credential, i) => {
           return (
-            <Grid>
+            <Grid key={`cred-${i}`}>
               <Row style={{ marginTop: "5px", gap: "5px" }}>
                 <TooltipIcon
                   text={TOOLTIP_TEXT[credential.qualificationType]}
