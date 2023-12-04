@@ -59,7 +59,7 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
       />
       <Page>
         <img src={skillsFutureLogo} />
-        <Title>Skill Passport</Title>
+        <Title>Skills Passport</Title>
         <Divider />
         <Row style={{ paddingTop: "25px", justifyContent: "space-between" }}>
           <Section style={{ paddingBottom: "0px" }}>{document.name}</Section>
@@ -131,7 +131,7 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
             </Grid>
           );
         })}
-        <Section style={{ paddingTop: "30px" }}>Profressional Credentials</Section>
+        <Section style={{ paddingTop: "30px" }}>Professional Credentials</Section>
         {document.professionalCredentials.map((credential, i) => {
           return (
             <Grid key={`cred-${i}`}>
@@ -162,7 +162,7 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
           <LegendRow type="DECLARED" />
         </LegendBox>
         <Divider />
-        <Section style={{ paddingTop: "15px" }}>Skills</Section>
+        <Section style={{ paddingTop: "15px", paddingBottom: "0px" }}>Skills</Section>
         {document.skills.map((skill, skillIndex) => {
           const skillsInCategory = skill.values;
           if (skill.values.filter(skill => skill.name !== undefined).length === 0) {
@@ -170,7 +170,7 @@ export const ResumeV2Template: FunctionComponent<TemplateProps<ResumeV2>> = ({
           }
           return (
             <>
-              <Detail style={{ marginBottom: "5px", marginTop: "5px", fontSize: "16px", color: "#252525" }} bold>
+              <Detail style={{ marginBottom: "5px", marginTop: "15px", fontSize: "16px", color: "#252525" }} bold>
                 {skill.category}
               </Detail>
               <Grid>
