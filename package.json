@@ -8,7 +8,7 @@
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@govtechsg/decentralized-renderer-react-components": "^3.2.0",
-    "@govtechsg/oa-schemata": "^1.2.0",
+    "@govtechsg/oa-schemata": "^1.19.1",
     "@hot-loader/react-dom": "^16.13.0",
     "date-fns": "^2.16.1",
     "debug": "4.1.1",
