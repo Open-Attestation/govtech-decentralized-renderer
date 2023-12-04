@@ -5,7 +5,8 @@ import { geekOut2020Template } from "./geekOut/geekOut2020";
 import { geekOut2021Template } from "./geekOut/geekOut2021";
 import { covidLetterOfAppreciationTemplate } from "./covidAppreciationLetter";
 import { geekOutV2Template } from "./geekOut/geekOutV2";
-import { resumeTemplate } from "./demo-resume";
+import { resumeTemplate } from "./demo-resume/v1";
+import { resumeV2Template } from "./demo-resume/v2";
 
 export const registry: TemplateRegistry<any> = {
   CERTIFICATE_OF_ACHIEVEMENT: templates,
@@ -14,5 +15,6 @@ export const registry: TemplateRegistry<any> = {
   GEEK_OUT_2021: geekOut2021Template,
   GEEK_OUT_V2: geekOutV2Template,
   COVID_LETTER_OF_APPRECIATION_2021: covidLetterOfAppreciationTemplate,
-  RESUME_DEMO: resumeTemplate
+  RESUME_DEMO: resumeTemplate,
+  RESUME_DEMO_V2: resumeV2Template
 };
