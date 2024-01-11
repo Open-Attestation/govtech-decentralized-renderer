@@ -47,7 +47,7 @@ const Container = styled.div`
       margin: 0px;
       text-align: right;
       font-size: 35pt;
-      font-family: "lucida-sans";
+      font-family: "libre-franklin";
       font-weight: 600;
       font-style: italic;
       color: #4b5054;
